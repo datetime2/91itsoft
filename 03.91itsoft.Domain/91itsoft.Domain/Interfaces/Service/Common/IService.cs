@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace _91itsoft.Domain.Interfaces.Repository.Common
+namespace _91itsoft.Domain.Interfaces.Service
 {
-    public interface IRepository<TEntity>
-      where TEntity : class
+    public interface IService<TEntity>
+        where TEntity : class
     {
-        void Add(TEntity entity);
-        void Update(TEntity entity);
-
-        void Delete(TEntity entity);
         TEntity Get(int id);
         IEnumerable<TEntity> All();
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
+        void Add(TEntity entity);
+        void Update(TEntity entity);
+        void Delete(TEntity entity);
     }
 }
