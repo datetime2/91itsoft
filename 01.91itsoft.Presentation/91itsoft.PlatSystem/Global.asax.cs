@@ -13,6 +13,7 @@ namespace _91itsoft.PlatSystem
     {
         protected void Application_Start()
         {
+            AutofacConfig.Config();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleTable.EnableOptimizations = true;

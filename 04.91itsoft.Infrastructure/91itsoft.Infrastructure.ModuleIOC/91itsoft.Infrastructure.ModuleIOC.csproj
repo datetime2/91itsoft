@@ -61,6 +61,10 @@
       <Project>{95D3A390-0186-41F1-9999-85109BF0639B}</Project>
       <Name>91itsoft.Plugin.Cache</Name>
     </ProjectReference>
+    <ProjectReference Include="..\91itsoft.Infrastructure.Authorize\91itsoft.Infrastructure.Authorize.csproj">
+      <Project>{CE13DAD6-18F3-469F-8269-66F332D0AE8C}</Project>
+      <Name>91itsoft.Infrastructure.Authorize</Name>
+    </ProjectReference>
     <ProjectReference Include="..\91itsoft.Infrastructure.Repository\91itsoft.Infrastructure.Repository.csproj">
       <Project>{689052DD-8D92-4E75-ABC5-7DE6D1C8D3B7}</Project>
       <Name>91itsoft.Infrastructure.Repository</Name>
