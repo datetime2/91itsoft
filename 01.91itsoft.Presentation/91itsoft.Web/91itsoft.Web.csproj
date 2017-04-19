@@ -108,7 +108,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\PlatAdmin\PlatAdminAreaRegistration.cs" />
     <Compile Include="Controllers\BaseAuthorizeController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -121,7 +120,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Areas\PlatAdmin\Views\web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -138,9 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\PlatAdmin\Controllers\" />
-    <Folder Include="Areas\PlatAdmin\Models\" />
-    <Folder Include="Areas\PlatAdmin\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Views\User\" />
   </ItemGroup>

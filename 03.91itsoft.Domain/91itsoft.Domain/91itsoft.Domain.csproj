@@ -63,7 +63,10 @@
       <Name>91itsoft.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Aggregates\Article\" />
+    <Folder Include="Aggregates\User\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
