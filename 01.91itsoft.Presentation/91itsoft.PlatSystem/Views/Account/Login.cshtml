@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+@{
+    var ReturnUrl = ViewBag.ReturnUrl as String;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>登陆</title>
+    <meta charset="UTF-8" />
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="/Content/login.css" />
+    @Scripts.Render("~/bundles/jquery")
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body class="login">
+
+    <div class="account-container login stacked">
+        <div class="content clearfix">
+            @using (Ajax.BeginForm("SignIn", "Account", new AjaxOptions { HttpMethod = "Post", OnSuccess = "ajaxRequestSuccess" }))
+            {
+                <div class="login-fields">
+                    <p>输入用户名和密码:</p>
+                    <div class="field">
+                        <label for="loginName">用户名:</label>
+                        <input type="text" id="loginName" name="loginName" value="" placeholder="用户名" class="login username-field" />
+                    </div> <!-- /field -->
+                    <div class="field">
+                        <label for="password">密码:</label>
+                        <input type="password" id="password" name="password" value="" placeholder="密码" class="login password-field" />
+                    </div> <!-- /password -->
+                </div>
+                <!-- /login-fields -->
+
+                <div class="login-actions">
+                    <span class="login-checkbox">
+                        <input id="rememberMe" name="rememberMe" type="checkbox" class="field login-checkbox" value="true" tabindex="4" checked="checked" />
+                        <label class="choice" for="rememberMe">7天内保持登录</label>
+                    </span>
+
+                    <input type="hidden" name="returnUrl" value="@ReturnUrl" />
+                    <button class="button btn btn-primary btn-success btn-large">登录</button>
+                </div>
+            }
+        </div> <!-- /content -->
+    </div> <!-- /account-container -->
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/unicorn")
+    @Scripts.Render("~/bundles/common")
+</body>
+</html>

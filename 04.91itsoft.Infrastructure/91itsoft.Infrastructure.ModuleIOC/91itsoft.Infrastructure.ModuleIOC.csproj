@@ -30,8 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Autofac.4.5.0\lib\net45\Autofac.dll</HintPath>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,9 +49,6 @@
     <Compile Include="SystemModule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\02.91itsoft.Application\91itsoft.Application\91itsoft.Application.csproj">
       <Project>{228B122C-8BF8-47BD-BF7B-50B37877884F}</Project>
       <Name>91itsoft.Application</Name>
@@ -60,10 +57,18 @@
       <Project>{511B68D5-9E13-481A-9718-3F0631D47A09}</Project>
       <Name>91itsoft.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\04-01.91itsoft.Infrastructure.Plugins\Cache\91itsoft.Plugin.Cache\91itsoft.Plugin.Cache.csproj">
+      <Project>{95D3A390-0186-41F1-9999-85109BF0639B}</Project>
+      <Name>91itsoft.Plugin.Cache</Name>
+    </ProjectReference>
     <ProjectReference Include="..\91itsoft.Infrastructure.Repository\91itsoft.Infrastructure.Repository.csproj">
       <Project>{689052DD-8D92-4E75-ABC5-7DE6D1C8D3B7}</Project>
       <Name>91itsoft.Infrastructure.Repository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

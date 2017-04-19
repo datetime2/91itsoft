@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorizeManager.cs" />
     <Compile Include="Converters\System\MenuConverters.cs" />
     <Compile Include="Converters\System\RoleConverters.cs" />
     <Compile Include="Converters\System\RoleGroupConverters.cs" />
@@ -107,6 +109,14 @@
     <ProjectReference Include="..\..\03.91itsoft.Domain\91itsoft.Domain\91itsoft.Domain.csproj">
       <Project>{511b68d5-9e13-481a-9718-3f0631d47a09}</Project>
       <Name>91itsoft.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\04.91itsoft.Infrastructure\04-01.91itsoft.Infrastructure.Plugins\Cache\91itsoft.Plugin.Cache\91itsoft.Plugin.Cache.csproj">
+      <Project>{95d3a390-0186-41f1-9999-85109bf0639b}</Project>
+      <Name>91itsoft.Plugin.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\04.91itsoft.Infrastructure\91itsoft.Infrastructure.Authorize\91itsoft.Infrastructure.Authorize.csproj">
+      <Project>{ce13dad6-18f3-469f-8269-66f332d0ae8c}</Project>
+      <Name>91itsoft.Infrastructure.Authorize</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\04.91itsoft.Infrastructure\91itsoft.Infrastructure.Utility\91itsoft.Infrastructure.Utility.csproj">
       <Project>{c40e4c6b-d1a4-4ea2-9377-a9b6ee426792}</Project>

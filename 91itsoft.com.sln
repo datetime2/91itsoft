@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.91itsoft.Domain", "03.91
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.91itsoft.Infrastructure", "04.91itsoft.Infrastructure", "{1CBB4056-AED5-4393-89C7-5E9253DD5296}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.Web", "01.91itsoft.Presentation\91itsoft.Web\91itsoft.Web.csproj", "{81CCF209-0234-4BE4-A6C3-ED23C1DB1B6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.PlatSystem", "01.91itsoft.Presentation\91itsoft.PlatSystem\91itsoft.PlatSystem.csproj", "{81CCF209-0234-4BE4-A6C3-ED23C1DB1B6F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.H5", "01.91itsoft.Presentation\91itsoft.H5\91itsoft.H5.csproj", "{9ECFF6BF-B27D-47DB-821E-359A05650CEC}"
 EndProject
@@ -28,6 +28,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.Infrastructure.Utility", "04.91itsoft.Infrastructure\91itsoft.Infrastructure.Utility\91itsoft.Infrastructure.Utility.csproj", "{C40E4C6B-D1A4-4EA2-9377-A9B6EE426792}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.Infrastructure.Authorize", "04.91itsoft.Infrastructure\91itsoft.Infrastructure.Authorize\91itsoft.Infrastructure.Authorize.csproj", "{CE13DAD6-18F3-469F-8269-66F332D0AE8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04-01.91itsoft.Infrastructure.Plugins", "04-01.91itsoft.Infrastructure.Plugins", "{93BA3396-4D06-4649-9505-1B0D679051F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cache", "Cache", "{E97A4A4A-8341-4E7F-BE2D-052C7C130FA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.Plugin.Cache", "04.91itsoft.Infrastructure\04-01.91itsoft.Infrastructure.Plugins\Cache\91itsoft.Plugin.Cache\91itsoft.Plugin.Cache.csproj", "{95D3A390-0186-41F1-9999-85109BF0639B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.Plugin.Cache.AspNet", "04.91itsoft.Infrastructure\04-01.91itsoft.Infrastructure.Plugins\Cache\91itsoft.Plugin.Cache.AspNet\91itsoft.Plugin.Cache.AspNet.csproj", "{B3179717-C3AD-4711-AFCA-8BD308C062FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +79,14 @@ Global
 		{CE13DAD6-18F3-469F-8269-66F332D0AE8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE13DAD6-18F3-469F-8269-66F332D0AE8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE13DAD6-18F3-469F-8269-66F332D0AE8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95D3A390-0186-41F1-9999-85109BF0639B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95D3A390-0186-41F1-9999-85109BF0639B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95D3A390-0186-41F1-9999-85109BF0639B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95D3A390-0186-41F1-9999-85109BF0639B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3179717-C3AD-4711-AFCA-8BD308C062FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3179717-C3AD-4711-AFCA-8BD308C062FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3179717-C3AD-4711-AFCA-8BD308C062FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3179717-C3AD-4711-AFCA-8BD308C062FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,5 +101,9 @@ Global
 		{102D0C4C-BD04-45F5-B4DB-C33988BB96DD} = {1CBB4056-AED5-4393-89C7-5E9253DD5296}
 		{C40E4C6B-D1A4-4EA2-9377-A9B6EE426792} = {1CBB4056-AED5-4393-89C7-5E9253DD5296}
 		{CE13DAD6-18F3-469F-8269-66F332D0AE8C} = {1CBB4056-AED5-4393-89C7-5E9253DD5296}
+		{93BA3396-4D06-4649-9505-1B0D679051F8} = {1CBB4056-AED5-4393-89C7-5E9253DD5296}
+		{E97A4A4A-8341-4E7F-BE2D-052C7C130FA7} = {93BA3396-4D06-4649-9505-1B0D679051F8}
+		{95D3A390-0186-41F1-9999-85109BF0639B} = {E97A4A4A-8341-4E7F-BE2D-052C7C130FA7}
+		{B3179717-C3AD-4711-AFCA-8BD308C062FC} = {E97A4A4A-8341-4E7F-BE2D-052C7C130FA7}
 	EndGlobalSection
 EndGlobal
