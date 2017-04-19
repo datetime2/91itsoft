@@ -108,13 +108,13 @@
       <Project>{511b68d5-9e13-481a-9718-3f0631d47a09}</Project>
       <Name>91itsoft.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\04.91itsoft.Infrastructure\91itsoft.Infrastructure.Utility\91itsoft.Infrastructure.Utility.csproj">
+      <Project>{c40e4c6b-d1a4-4ea2-9377-a9b6ee426792}</Project>
+      <Name>91itsoft.Infrastructure.Utility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\04.91itsoft.Infrastructure\91itsoft.Infrastructure\91itsoft.Infrastructure.csproj">
       <Project>{e1e238b7-bfa3-4f5c-b3e0-b8d3ec122544}</Project>
       <Name>91itsoft.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\04.91itsoft.Infrastructure\91itsoft.Utility\91itsoft.Utility.csproj">
-      <Project>{C40E4C6B-D1A4-4EA2-9377-A9B6EE426792}</Project>
-      <Name>91itsoft.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

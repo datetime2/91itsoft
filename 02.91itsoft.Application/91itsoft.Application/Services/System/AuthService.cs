@@ -6,8 +6,8 @@ using _91itsoft.Application.Resources;
 using _91itsoft.Application.Converters;
 using _91itsoft.Application.DTOs;
 using _91itsoft.Domain.Aggregates.UserAgg;
-using _91itsoft.Utility;
-using _91itsoft.Utility.Helper;
+using _91itsoft.Infrastructure.Utility;
+using _91itsoft.Infrastructure.Utility.Helper;
 
 namespace _91itsoft.Application.Services
 {

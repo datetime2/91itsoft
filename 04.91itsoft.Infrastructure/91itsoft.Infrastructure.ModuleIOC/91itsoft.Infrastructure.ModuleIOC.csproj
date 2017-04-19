@@ -7,8 +7,8 @@
     <ProjectGuid>{102D0C4C-BD04-45F5-B4DB-C33988BB96DD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_91itsoft.ModuleIOC</RootNamespace>
-    <AssemblyName>91itsoft.ModuleIOC</AssemblyName>
+    <RootNamespace>_91itsoft.Infrastructure.ModuleIOC</RootNamespace>
+    <AssemblyName>91itsoft.Infrastructure.ModuleIOC</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -61,9 +61,9 @@
       <Project>{511B68D5-9E13-481A-9718-3F0631D47A09}</Project>
       <Name>91itsoft.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\91itsoft.Repository\91itsoft.Repository.csproj">
+    <ProjectReference Include="..\91itsoft.Infrastructure.Repository\91itsoft.Infrastructure.Repository.csproj">
       <Project>{689052DD-8D92-4E75-ABC5-7DE6D1C8D3B7}</Project>
-      <Name>91itsoft.Repository</Name>
+      <Name>91itsoft.Infrastructure.Repository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

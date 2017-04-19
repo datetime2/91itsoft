@@ -4,9 +4,9 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using _91itsoft.Utility.Helper;
+using _91itsoft.Infrastructure.Utility.Helper;
 
-namespace _91itsoft.Utility
+namespace _91itsoft.Infrastructure.Utility
 {
     public static class SecurityHelper
     {

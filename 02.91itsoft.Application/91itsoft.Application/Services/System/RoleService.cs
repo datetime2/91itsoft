@@ -9,7 +9,7 @@ using _91itsoft.Domain.Aggregates.MenuAgg;
 using _91itsoft.Domain.Aggregates.RoleAgg;
 using _91itsoft.Domain.Aggregates.RoleGroupAgg;
 using _91itsoft.Entity;
-using _91itsoft.Utility.Helper;
+using _91itsoft.Infrastructure.Utility.Helper;
 using PagedList;
 
 namespace _91itsoft.Application.Services

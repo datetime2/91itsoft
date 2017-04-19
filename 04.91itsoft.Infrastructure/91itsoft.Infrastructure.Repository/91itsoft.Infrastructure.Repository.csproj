@@ -7,8 +7,8 @@
     <ProjectGuid>{689052DD-8D92-4E75-ABC5-7DE6D1C8D3B7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_91itsoft.Repository</RootNamespace>
-    <AssemblyName>91itsoft.Repository</AssemblyName>
+    <RootNamespace>_91itsoft.Infrastructure.Repository</RootNamespace>
+    <AssemblyName>91itsoft.Infrastructure.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -82,9 +82,9 @@
       <Project>{e1e238b7-bfa3-4f5c-b3e0-b8d3ec122544}</Project>
       <Name>91itsoft.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\91itsoft.Utility\91itsoft.Utility.csproj">
+    <ProjectReference Include="..\91itsoft.Infrastructure.Utility\91itsoft.Infrastructure.Utility.csproj">
       <Project>{c40e4c6b-d1a4-4ea2-9377-a9b6ee426792}</Project>
-      <Name>91itsoft.Utility</Name>
+      <Name>91itsoft.Infrastructure.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

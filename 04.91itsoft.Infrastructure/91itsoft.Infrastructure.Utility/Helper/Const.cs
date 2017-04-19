@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _91itsoft.Utility.Helper
+namespace _91itsoft.Infrastructure.Utility.Helper
 {
     public class Const
     {

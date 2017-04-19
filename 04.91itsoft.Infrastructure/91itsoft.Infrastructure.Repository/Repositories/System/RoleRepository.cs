@@ -3,7 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using EntityFramework.Extensions;
 using _91itsoft.Domain.Aggregates.RoleAgg;
-using _91itsoft.Utility.Helper;
+using _91itsoft.Infrastructure.Utility.Helper;
 using _91itsoft.Repository.UnitOfWork;
 using PagedList;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _91itsoft.Utility.Helper
+namespace _91itsoft.Infrastructure.Utility.Helper
 {
     public static class TextHelper
     {
