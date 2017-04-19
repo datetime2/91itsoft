@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{511B68D5-9E13-481A-9718-3F0631D47A09}</ProjectGuid>
+    <ProjectGuid>{C40E4C6B-D1A4-4EA2-9377-A9B6EE426792}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_91itsoft.Domain</RootNamespace>
-    <AssemblyName>91itsoft.Domain</AssemblyName>
+    <RootNamespace>_91itsoft.Utility</RootNamespace>
+    <AssemblyName>91itsoft.Utility</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,12 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,27 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aggregates\System\MenuAgg\IMenuRepository.cs" />
-    <Compile Include="Aggregates\System\MenuAgg\IPermissionRepository.cs" />
-    <Compile Include="Aggregates\System\MenuAgg\Menu.cs" />
-    <Compile Include="Aggregates\System\MenuAgg\Permission.cs" />
-    <Compile Include="Aggregates\System\RoleAgg\IRoleRepository.cs" />
-    <Compile Include="Aggregates\System\RoleAgg\Role.cs" />
-    <Compile Include="Aggregates\System\RoleGroupAgg\IRoleGroupRepository.cs" />
-    <Compile Include="Aggregates\System\RoleGroupAgg\RoleGroup.cs" />
-    <Compile Include="Aggregates\System\UserAgg\IUserRepository.cs" />
-    <Compile Include="Aggregates\System\UserAgg\User.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Helper\Const.cs" />
+    <Compile Include="Helper\TextHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\04.91itsoft.Infrastructure\91itsoft.Infrastructure\91itsoft.Infrastructure.csproj">
-      <Project>{e1e238b7-bfa3-4f5c-b3e0-b8d3ec122544}</Project>
-      <Name>91itsoft.Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Compile Include="SecurityHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,10 +48,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\System\MenuConverters.cs" />
+    <Compile Include="Converters\System\RoleConverters.cs" />
+    <Compile Include="Converters\System\RoleGroupConverters.cs" />
+    <Compile Include="Converters\System\UserConverters.cs" />
+    <Compile Include="Converters\SystemConverters.cs" />
+    <Compile Include="DTOs\IdNameDTO.cs" />
+    <Compile Include="DTOs\System\MenuDTO.cs" />
+    <Compile Include="DTOs\System\PermissionDTO.cs" />
+    <Compile Include="DTOs\System\PermissionForAuthDTO.cs" />
+    <Compile Include="DTOs\System\RoleDTO.cs" />
+    <Compile Include="DTOs\System\RoleGroupDTO.cs" />
+    <Compile Include="DTOs\System\UserDTO.cs" />
+    <Compile Include="Exceptions\ArgumentEmptyException.cs" />
+    <Compile Include="Exceptions\DataExistsException.cs" />
+    <Compile Include="Exceptions\DataNotFoundException.cs" />
+    <Compile Include="Exceptions\DefinedException.cs" />
+    <Compile Include="Exceptions\NotEqualException.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\CommonResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CommonResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ModulesResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModulesResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserSystemResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserSystemResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\System\AuthService.cs" />
+    <Compile Include="Services\System\Interface\IAuthService.cs" />
+    <Compile Include="Services\System\Interface\IMenuService.cs" />
+    <Compile Include="Services\System\Interface\IRoleGroupService.cs" />
+    <Compile Include="Services\System\Interface\IRoleService.cs" />
+    <Compile Include="Services\System\Interface\IUserService.cs" />
+    <Compile Include="Services\System\MenuService.cs" />
+    <Compile Include="Services\System\RoleGroupService.cs" />
+    <Compile Include="Services\System\RoleService.cs" />
+    <Compile Include="Services\System\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\" />
+    <Folder Include="Converters\Article\" />
+    <Folder Include="Converters\Order\" />
+    <Folder Include="Converters\Product\" />
+    <Folder Include="Converters\User\" />
+    <Folder Include="Services\Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\03.91itsoft.Domain\91itsoft.Domain\91itsoft.Domain.csproj">
+      <Project>{511b68d5-9e13-481a-9718-3f0631d47a09}</Project>
+      <Name>91itsoft.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\04.91itsoft.Infrastructure\91itsoft.Infrastructure\91itsoft.Infrastructure.csproj">
+      <Project>{e1e238b7-bfa3-4f5c-b3e0-b8d3ec122544}</Project>
+      <Name>91itsoft.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\04.91itsoft.Infrastructure\91itsoft.Utility\91itsoft.Utility.csproj">
+      <Project>{C40E4C6B-D1A4-4EA2-9377-A9B6EE426792}</Project>
+      <Name>91itsoft.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CommonResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CommonResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ModulesResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ModulesResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\UserSystemResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>UserSystemResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
