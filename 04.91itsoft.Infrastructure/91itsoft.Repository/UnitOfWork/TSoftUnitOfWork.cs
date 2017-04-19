@@ -16,7 +16,7 @@ namespace _91itsoft.Repository.UnitOfWork
     public class TSoftUnitOfWork : DbContext, ITSoftUnitOfWork
     {
         public TSoftUnitOfWork()
-            : base("NLayerContext")
+            : base("91ITSoft")
         {
             Initializer.DbInitializer.Initialize();
         }
@@ -35,11 +35,11 @@ namespace _91itsoft.Repository.UnitOfWork
 
             mb.Entity<Menu>().HasMany(x => x.Permissions).WithRequired(x => x.Menu);
 
-            mb.Entity<User>().HasMany(x => x.Groups).WithMany(x => x.Users).Map(x => x.MapLeftKey("User_Id").MapRightKey("RoleGroup_Id").ToTable("RoleGroup_User", "auth"));
+            mb.Entity<User>().HasMany(x => x.Groups).WithMany(x => x.Users).Map(x => x.MapLeftKey("User_Id").MapRightKey("RoleGroup_Id").ToTable("RoleGroup_User"));
 
-            mb.Entity<User>().HasMany(x => x.Permissions).WithMany(x => x.Users).Map(x => x.MapLeftKey("User_Id").MapRightKey("Permission_Id").ToTable("User_Permission", "auth"));
+            mb.Entity<User>().HasMany(x => x.Permissions).WithMany(x => x.Users).Map(x => x.MapLeftKey("User_Id").MapRightKey("Permission_Id").ToTable("User_Permission"));
 
-            mb.Entity<Role>().HasMany(x => x.Permissions).WithMany(x => x.Roles).Map(x => x.MapLeftKey("Role_Id").MapRightKey("Permission_Id").ToTable("Role_Permission", "auth"));
+            mb.Entity<Role>().HasMany(x => x.Permissions).WithMany(x => x.Roles).Map(x => x.MapLeftKey("Role_Id").MapRightKey("Permission_Id").ToTable("Role_Permission"));
         }
 
         public void ApplyCurrentValues<TEntity>(TEntity original, TEntity current) where TEntity : class
