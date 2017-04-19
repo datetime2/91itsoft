@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.Infrastructure.Mod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.Infrastructure.Utility", "04.91itsoft.Infrastructure\91itsoft.Infrastructure.Utility\91itsoft.Infrastructure.Utility.csproj", "{C40E4C6B-D1A4-4EA2-9377-A9B6EE426792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.91itsoft.Infrastructure.Authorize", "04.91itsoft.Infrastructure\04.91itsoft.Infrastructure.Authorize\04.91itsoft.Infrastructure.Authorize.csproj", "{CE13DAD6-18F3-469F-8269-66F332D0AE8C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "91itsoft.Infrastructure.Authorize", "04.91itsoft.Infrastructure\91itsoft.Infrastructure.Authorize\91itsoft.Infrastructure.Authorize.csproj", "{CE13DAD6-18F3-469F-8269-66F332D0AE8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

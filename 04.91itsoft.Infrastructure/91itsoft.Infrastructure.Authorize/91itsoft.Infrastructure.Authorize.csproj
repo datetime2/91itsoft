@@ -7,8 +7,8 @@
     <ProjectGuid>{CE13DAD6-18F3-469F-8269-66F332D0AE8C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_04._91itsoft.Infrastructure.Authorize</RootNamespace>
-    <AssemblyName>04.91itsoft.Infrastructure.Authorize</AssemblyName>
+    <RootNamespace>_91itsoft.Infrastructure.Authorize</RootNamespace>
+    <AssemblyName>91itsoft.Infrastructure.Authorize</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
