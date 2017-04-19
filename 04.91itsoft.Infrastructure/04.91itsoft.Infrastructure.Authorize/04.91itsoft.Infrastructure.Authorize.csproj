@@ -32,6 +32,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AuthObject\MenuForAuthorize.cs" />
+    <Compile Include="AuthObject\PermissionForAuthorize.cs" />
+    <Compile Include="AuthObject\UserForAuthorize.cs" />
+    <Compile Include="AuthObject\UserToken.cs" />
+    <Compile Include="AuthorizeException.cs" />
+    <Compile Include="AuthorizeFilter.cs" />
+    <Compile Include="IAuthorizeManager.cs" />
+    <Compile Include="MenuAttribute.cs" />
+    <Compile Include="PermissionAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
