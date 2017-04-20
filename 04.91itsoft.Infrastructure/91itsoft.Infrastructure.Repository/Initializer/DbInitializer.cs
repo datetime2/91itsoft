@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using _91itsoft.Repository.Migrations;
+using _91itsoft.Infrastructure.Repository.Migrations;
 using _91itsoft.Repository.UnitOfWork;
 
 namespace _91itsoft.Repository.Initializer

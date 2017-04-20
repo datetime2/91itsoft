@@ -1,18 +1,21 @@
-namespace _91itsoft.Repository.Migrations
+namespace _91itsoft.Infrastructure.Repository.Migrations
 {
+    using System;
+    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    internal sealed class Configuration : DbMigrationsConfiguration<UnitOfWork.TSoftUnitOfWork>
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<_91itsoft.Repository.UnitOfWork.TSoftUnitOfWork>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = false;
-            //AutomaticMigrationsEnabled = false;
-            //ContextKey = "_91itsoft.Repository.UnitOfWork.TSoftUnitOfWork";
+            AutomaticMigrationsEnabled = false;
         }
-        protected override void Seed(UnitOfWork.TSoftUnitOfWork context)
+
+        protected override void Seed(_91itsoft.Repository.UnitOfWork.TSoftUnitOfWork context)
         {
             //  This method will be called after migrating to the latest version.
+
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //

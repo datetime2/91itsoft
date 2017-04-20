@@ -8,7 +8,7 @@ using _91itsoft.Entity;
 
 namespace _91itsoft.Domain.Aggregates.MenuAgg
 {
-    [Table("auth.Permission")]
+    [Table("Permission")]
     public class Permission : EntityBase
     {
         public override Guid Id { get; set; }
