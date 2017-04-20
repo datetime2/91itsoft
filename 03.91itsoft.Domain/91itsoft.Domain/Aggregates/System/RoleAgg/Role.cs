@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using _91itsoft.Domain.Aggregates.MenuAgg;
-using _91itsoft.Domain.Aggregates.RoleGroupAgg;
-using _91itsoft.Domain.Aggregates.UserAgg;
 using _91itsoft.Entity;
 
-namespace _91itsoft.Domain.Aggregates.RoleAgg
+namespace _91itsoft.Domain.Aggregates
 {
     [Table("Role")]
     public class Role : EntityBase

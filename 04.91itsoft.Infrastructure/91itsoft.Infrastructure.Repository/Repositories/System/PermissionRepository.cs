@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
-using _91itsoft.Domain.Aggregates.MenuAgg;
+using _91itsoft.Domain.Aggregates;
 using _91itsoft.Repository.UnitOfWork;
+using _91itsoft.Domain.IRepository;
 
 namespace _91itsoft.Repository.Repositories
 {

@@ -1,19 +1,11 @@
 ﻿using AutoMapper;
 using _91itsoft.Application.DTOs;
-using _91itsoft.Domain.Aggregates.RoleAgg;
+using _91itsoft.Domain.Aggregates;
 
 namespace _91itsoft.Application.AutoMappers
 {
-    public static partial class SystemAutoMappers
+    public static partial class SystemMapper
     {
-        public static void InitRoleMappers()
-        {
-            Mapper.Initialize(cfg =>
-            {
-                cfg.CreateMap<Role, RoleDTO>();
-                cfg.CreateMap<RoleDTO, Role>();
-            });
-        }
         public static Role ToModel(this RoleDTO dto)
         {
             return Mapper.Map<Role>(dto);

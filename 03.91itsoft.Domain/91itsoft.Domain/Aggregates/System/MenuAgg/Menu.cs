@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using _91itsoft.Entity;
 
-namespace _91itsoft.Domain.Aggregates.MenuAgg
+namespace _91itsoft.Domain.Aggregates
 {
     [Table("Menu")]
     public class Menu : EntityBase

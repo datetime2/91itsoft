@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using _91itsoft.Domain.Aggregates.MenuAgg;
-using _91itsoft.Domain.Aggregates.RoleAgg;
-using _91itsoft.Domain.Aggregates.RoleGroupAgg;
 using _91itsoft.Entity;
 
-namespace _91itsoft.Domain.Aggregates.UserAgg
+namespace _91itsoft.Domain.Aggregates
 {
     [Table("User")]
     public class User : EntityBase

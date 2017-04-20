@@ -5,10 +5,10 @@ using _91itsoft.Application.Exceptions;
 using _91itsoft.Application.Resources;
 using _91itsoft.Application.AutoMappers;
 using _91itsoft.Application.DTOs;
-using _91itsoft.Domain.Aggregates.UserAgg;
 using _91itsoft.Infrastructure.Utility;
 using _91itsoft.Infrastructure.Utility.Helper;
 using _91itsoft.Application.SystemModules;
+using _91itsoft.Domain.IRepository;
 
 namespace _91itsoft.Application.Services
 {

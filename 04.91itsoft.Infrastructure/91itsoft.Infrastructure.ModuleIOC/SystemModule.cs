@@ -1,8 +1,5 @@
 ﻿using _91itsoft.Application.Services;
-using _91itsoft.Domain.Aggregates.MenuAgg;
-using _91itsoft.Domain.Aggregates.RoleAgg;
-using _91itsoft.Domain.Aggregates.RoleGroupAgg;
-using _91itsoft.Domain.Aggregates.UserAgg;
+using _91itsoft.Domain.IRepository;
 using _91itsoft.Repository.Repositories;
 using Autofac;
 namespace _91itsoft.ModuleIOC

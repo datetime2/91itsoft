@@ -63,6 +63,10 @@
       <HintPath>..\..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -248,6 +252,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacConfig.cs" />
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -287,6 +292,10 @@
     <ProjectReference Include="..\..\02.91itsoft.Application\91itsoft.Application\91itsoft.Application.csproj">
       <Project>{228B122C-8BF8-47BD-BF7B-50B37877884F}</Project>
       <Name>91itsoft.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\03.91itsoft.Domain\91itsoft.Domain\91itsoft.Domain.csproj">
+      <Project>{511B68D5-9E13-481A-9718-3F0631D47A09}</Project>
+      <Name>91itsoft.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\04.91itsoft.Infrastructure\91itsoft.Infrastructure.Authorize\91itsoft.Infrastructure.Authorize.csproj">
       <Project>{CE13DAD6-18F3-469F-8269-66F332D0AE8C}</Project>

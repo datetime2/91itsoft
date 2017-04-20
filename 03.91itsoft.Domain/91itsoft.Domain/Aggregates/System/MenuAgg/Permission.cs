@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using _91itsoft.Domain.Aggregates.RoleAgg;
-using _91itsoft.Domain.Aggregates.UserAgg;
 using _91itsoft.Entity;
 
-namespace _91itsoft.Domain.Aggregates.MenuAgg
+namespace _91itsoft.Domain.Aggregates
 {
     [Table("Permission")]
     public class Permission : EntityBase

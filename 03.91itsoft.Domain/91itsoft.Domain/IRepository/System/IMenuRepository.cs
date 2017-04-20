@@ -1,6 +1,7 @@
-﻿using _91itsoft.Repository;
+﻿using _91itsoft.Domain.Aggregates;
+using _91itsoft.Repository;
 using PagedList;
-namespace _91itsoft.Domain.Aggregates.MenuAgg
+namespace _91itsoft.Domain.IRepository
 {
     public interface IMenuRepository : IRepository<Menu>
     {

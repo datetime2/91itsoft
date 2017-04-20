@@ -1,8 +1,8 @@
-﻿using System;
-using _91itsoft.Repository;
+﻿using _91itsoft.Repository;
 using PagedList;
+using _91itsoft.Domain.Aggregates;
 
-namespace _91itsoft.Domain.Aggregates.UserAgg
+namespace _91itsoft.Domain.IRepository
 {
     public interface IUserRepository : IRepository<User>
     {

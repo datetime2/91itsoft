@@ -45,15 +45,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aggregates\System\MenuAgg\IMenuRepository.cs" />
-    <Compile Include="Aggregates\System\MenuAgg\IPermissionRepository.cs" />
+    <Compile Include="IRepository\System\IMenuRepository.cs" />
+    <Compile Include="IRepository\System\IPermissionRepository.cs" />
     <Compile Include="Aggregates\System\MenuAgg\Menu.cs" />
     <Compile Include="Aggregates\System\MenuAgg\Permission.cs" />
-    <Compile Include="Aggregates\System\RoleAgg\IRoleRepository.cs" />
+    <Compile Include="IRepository\System\IRoleRepository.cs" />
     <Compile Include="Aggregates\System\RoleAgg\Role.cs" />
-    <Compile Include="Aggregates\System\RoleGroupAgg\IRoleGroupRepository.cs" />
+    <Compile Include="IRepository\System\IRoleGroupRepository.cs" />
     <Compile Include="Aggregates\System\RoleGroupAgg\RoleGroup.cs" />
-    <Compile Include="Aggregates\System\UserAgg\IUserRepository.cs" />
+    <Compile Include="IRepository\System\IUserRepository.cs" />
     <Compile Include="Aggregates\System\UserAgg\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

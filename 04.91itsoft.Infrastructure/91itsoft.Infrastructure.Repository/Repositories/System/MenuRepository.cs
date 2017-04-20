@@ -2,10 +2,11 @@
 using System.Data.Entity;
 using System.Linq;
 using EntityFramework.Extensions;
-using _91itsoft.Domain.Aggregates.MenuAgg;
+using _91itsoft.Domain.Aggregates;
 using _91itsoft.Repository.UnitOfWork;
 using PagedList;
 using _91itsoft.Infrastructure.Utility.Helper;
+using _91itsoft.Domain.IRepository;
 
 namespace _91itsoft.Repository.Repositories
 {
@@ -16,8 +17,8 @@ namespace _91itsoft.Repository.Repositories
         }
         public IPagedList<Menu> FindBy(string module, string name, int pageNumber, int pageSize)
         {
-            IQueryable<Menu> entities = Table; 
-            
+            IQueryable<Menu> entities = Table;
+
             if (name.NotNullOrBlank())
             {
                 entities =
@@ -51,7 +52,7 @@ namespace _91itsoft.Repository.Repositories
         {
             IQueryable<Menu> entities = Table;
             entities = entities.Where(x => x.Module == item.Module && x.Name == item.Name);
-            if(item.Id != Guid.Empty)
+            if (item.Id != Guid.Empty)
             {
                 entities = entities.Where(x => x.Id != item.Id);
             }

@@ -50,11 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizeManager.cs" />
-    <Compile Include="AutoMappers\System\MenuAutoMapper.cs" />
-    <Compile Include="AutoMappers\System\RoleAutoMapper.cs" />
-    <Compile Include="AutoMappers\System\RoleGroupAutoMapper.cs" />
-    <Compile Include="AutoMappers\System\UserAutoMapper.cs" />
-    <Compile Include="AutoMappers\SystemAutoMapper.cs" />
+    <Compile Include="AutoMappers\System\MenuMapper.cs" />
+    <Compile Include="AutoMappers\System\RoleMapper.cs" />
+    <Compile Include="AutoMappers\System\RoleGroupMapper.cs" />
+    <Compile Include="AutoMappers\System\UserMapper.cs" />
     <Compile Include="DTOs\IdNameDTO.cs" />
     <Compile Include="DTOs\System\MenuDTO.cs" />
     <Compile Include="DTOs\System\PermissionDTO.cs" />

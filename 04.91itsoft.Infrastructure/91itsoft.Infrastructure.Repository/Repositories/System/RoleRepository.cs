@@ -2,10 +2,11 @@
 using System.Data.Entity;
 using System.Linq;
 using EntityFramework.Extensions;
-using _91itsoft.Domain.Aggregates.RoleAgg;
 using _91itsoft.Infrastructure.Utility.Helper;
 using _91itsoft.Repository.UnitOfWork;
 using PagedList;
+using _91itsoft.Domain.Aggregates;
+using _91itsoft.Domain.IRepository;
 
 namespace _91itsoft.Repository.Repositories
 {
