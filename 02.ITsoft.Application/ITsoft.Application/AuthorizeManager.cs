@@ -17,18 +17,15 @@ namespace ITsoft.Application.Managers
     {
         private static ConcurrentDictionary<string, string> CacheKeys = new ConcurrentDictionary<string, string>();
         private IAuthService AuthService { get; set; }
-
         public AuthorizeManager(IAuthService authService)
         {
             AuthService = authService;
         }
-
         #region Private Methods
         private static string GetTokenKey(string token)
         {
-            return string.Format("NLAYER_AUTH_TOKEN_{0}", token);
+            return string.Format("AUTH_TOKEN_{0}", token);
         }
-
         private void RegisterToken(string token, string user = "SoftUser", bool rememberMe = false)
         {
             if (token.IsNullOrBlank())
@@ -41,12 +38,10 @@ namespace ITsoft.Application.Managers
                 userCookie.Expires = expiration;
             HttpContext.Current.Response.Cookies.Set(userCookie);
         }
-
         private void RemoveToken(string token)
         {
             Cache.Remove(GetTokenKey(token));
         }
-
         private void SetCacheAuthUser(string authToken, UserForAuthorize authUser)
         {
             var key = GetTokenKey(authToken);
@@ -54,11 +49,9 @@ namespace ITsoft.Application.Managers
             Cache.Set(key, authUser, 12 * 60);
             CacheKeys.TryAdd(key, key);
         }
-
         private UserForAuthorize GetAuthorizeUserInfo(string token, bool validateLoginToken = true)
         {
             var authUser = Cache.Get<UserForAuthorize>(GetTokenKey(token));
-
             var datas = token.Split('_');
             var loginToken = string.Empty;
             if (datas.Length == 2)
@@ -78,10 +71,8 @@ namespace ITsoft.Application.Managers
                 }
             }
             if (validateLoginToken)
-            {
                 if (authUser == null || !AuthService.ValidateLoginToken(authUser.UserId, loginToken))
                     return null;
-            }
             return authUser;
         }
 
@@ -93,12 +84,10 @@ namespace ITsoft.Application.Managers
                 UserId = user.Id,
                 UserName = user.Name
             };
-
             // 权限和菜单信息
             var permissions = new List<PermissionForAuthDTO>();
             permissions.AddRange(AuthService.GetRolePermissions(user.Id));
             permissions.AddRange(AuthService.GetUserPermissions(user.Id));
-
             authUser.Permissions = permissions.Select(x =>
                 new PermissionForAuthorize()
                 {
@@ -124,7 +113,6 @@ namespace ITsoft.Application.Managers
                 MenuName = x.MenuName,
                 MenuUrl = x.MenuUrl,
             }).DistinctBy(x => x.MenuId).ToList();
-
             return authUser;
         }
         #endregion
