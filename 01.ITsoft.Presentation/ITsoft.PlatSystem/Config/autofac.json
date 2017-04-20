@@ -1,10 +1,10 @@
 {
   "components": [
     {
-      "type": "91itsoft.Plugin.Cache.AspNet.NetCache, 91itsoft.Plugin.Cache.AspNet",
+      "type": "ITsoft.Plugin.Cache.AspNet.NetCache, ITsoft.Plugin.Cache.AspNet",
       "services": [
         {
-          "type": "91itsoft.Plugin.Cache.ICache, 91itsoft.Plugin.Cache"
+          "type": "ITsoft.Plugin.Cache.ICache, ITsoft.Plugin.Cache"
         }
       ],
       "injectProperties": true

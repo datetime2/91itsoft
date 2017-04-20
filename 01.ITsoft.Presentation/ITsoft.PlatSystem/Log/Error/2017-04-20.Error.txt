@@ -1,15 +1,15 @@
-时间：2017-04-20 17:20:34,975 
+时间：2017-04-20 17:44:00,075 
 级别：ERROR 
-类名：_91itsoft.PlatSystem.Controllers.AccountController.SignIn  
-描述：Message: “_91itsoft.Plugin.Cache.Cache”的类型初始值设定项引发异常。
+类名：ITsoft.PlatSystem.Controllers.AccountController.SignIn  
+描述：Message: “ITsoft.Plugin.Cache.Cache”的类型初始值设定项引发异常。
 Type: System.TypeInitializationException
-StackTrace:    在 _91itsoft.Plugin.Cache.Cache.Set(String key, Object value, Int32 minutes)
-   在 _91itsoft.Application.Managers.AuthorizeManager.SetCacheAuthUser(String authToken, UserForAuthorize authUser) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.91itsoft.Application\91itsoft.Application\AuthorizeManager.cs:行号 54
-   在 _91itsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.91itsoft.Application\91itsoft.Application\AuthorizeManager.cs:行号 170
-   在 _91itsoft.PlatSystem.Controllers.AccountController.SignIn(String returnUrl, String loginName, String password, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.91itsoft.Presentation\91itsoft.PlatSystem\Controllers\AccountController.cs:行号 32
-InnerException: Message: The type '91itsoft.Plugin.Cache.AspNet.NetCache, 91itsoft.Plugin.Cache.AspNet' could not be found. It may require assembly qualification, e.g. "MyType, MyAssembly".
+StackTrace:    在 ITsoft.Plugin.Cache.Cache.Set(String key, Object value, Int32 minutes)
+   在 ITsoft.Application.Managers.AuthorizeManager.SetCacheAuthUser(String authToken, UserForAuthorize authUser) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 54
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 170
+   在 ITsoft.PlatSystem.Controllers.AccountController.SignIn(String returnUrl, String loginName, String password, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\AccountController.cs:行号 32
+InnerException: Message: The type 'ITsoft.Plugin.Cache.AspNet.NetCache, ITsoft.Plugin.Cache.AspNet' could not be found. It may require assembly qualification, e.g. "MyType, MyAssembly".
 	Type: System.Exception
-	StackTrace:    在 _91itsoft.Plugin.Cache.Cache.Load() 位置 D:\CodeFile\91itsoft.com\91itsoft.com\04.91itsoft.Infrastructure\04-01.91itsoft.Infrastructure.Plugins\Cache\91itsoft.Plugin.Cache\Cache.cs:行号 85
-	   在 _91itsoft.Plugin.Cache.Cache..cctor() 位置 D:\CodeFile\91itsoft.com\91itsoft.com\04.91itsoft.Infrastructure\04-01.91itsoft.Infrastructure.Plugins\Cache\91itsoft.Plugin.Cache\Cache.cs:行号 15
+	StackTrace:    在 ITsoft.Plugin.Cache.Cache.Load() 位置 D:\CodeFile\91itsoft.com\91itsoft.com\04.ITsoft.Infrastructure\04-01.ITsoft.Infrastructure.Plugins\Cache\ITsoft.Plugin.Cache\Cache.cs:行号 85
+	   在 ITsoft.Plugin.Cache.Cache..cctor() 位置 D:\CodeFile\91itsoft.com\91itsoft.com\04.ITsoft.Infrastructure\04-01.ITsoft.Infrastructure.Plugins\Cache\ITsoft.Plugin.Cache\Cache.cs:行号 15
 	InnerException:  
 
