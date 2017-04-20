@@ -101,7 +101,6 @@
     <Folder Include="Converters\Article\" />
     <Folder Include="Converters\Order\" />
     <Folder Include="Converters\Product\" />
-    <Folder Include="Converters\User\" />
     <Folder Include="Services\Product\" />
   </ItemGroup>
   <ItemGroup>
