@@ -1,0 +1,13 @@
+{
+  "components": [
+    {
+      "type": "91itsoft.Plugin.Cache.AspNet.NetCache, 91itsoft.Plugin.Cache.AspNet",
+      "services": [
+        {
+          "type": "91itsoft.Plugin.Cache.ICache, 91itsoft.Plugin.Cache"
+        }
+      ],
+      "injectProperties": true
+    }
+  ]
+}
