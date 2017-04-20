@@ -9,7 +9,7 @@ namespace _91itsoft.PlatSystem
     public class AutofacConfig
     {
         public static IContainer Container { get; private set; }
-        public static void Config()
+        public static void initConfig()
         {
             var builder = new ContainerBuilder();
             var executingAssembly = Assembly.GetExecutingAssembly();

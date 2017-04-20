@@ -3,13 +3,13 @@ using AutoMapper;
 using _91itsoft.Application.DTOs;
 using _91itsoft.Domain.Aggregates.MenuAgg;
 
-namespace _91itsoft.Application.Converters
+namespace _91itsoft.Application.AutoMappers
 {
-    public static partial class SystemConverters
+    public static partial class SystemAutoMappers
     {
         public static void InitMenuMappers()
         {
-            var config = new MapperConfiguration(cfg =>
+            Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<Menu, MenuDTO>()
                 .ForMember(x => x.Permissions, opt => opt.MapFrom(s => s.Permissions.Select(x => x.ToDto()).ToList()));

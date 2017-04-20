@@ -2,13 +2,13 @@
 using _91itsoft.Application.DTOs;
 using _91itsoft.Domain.Aggregates.UserAgg;
 
-namespace _91itsoft.Application.Converters
+namespace _91itsoft.Application.AutoMappers
 {
-    public static partial class SystemConverters
+    public static partial class SystemAutoMappers
     {
         public static void InitUserMappers()
         {
-            var config = new MapperConfiguration(cfg =>
+            Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<User, UserDTO>();
                 cfg.CreateMap<UserDTO, User>();

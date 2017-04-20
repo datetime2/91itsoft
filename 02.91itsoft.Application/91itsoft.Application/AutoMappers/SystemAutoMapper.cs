@@ -1,8 +1,8 @@
-﻿namespace _91itsoft.Application.Converters
+﻿namespace _91itsoft.Application.AutoMappers
 {
-    public static partial class SystemConverters
+    public static partial class SystemAutoMappers
     {
-        static SystemConverters()
+        static SystemAutoMappers()
         {
             InitRoleMappers();
             InitUserMappers();

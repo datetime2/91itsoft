@@ -1,0 +1,18 @@
+时间：2017-04-20 13:53:10,085 
+级别：ERROR 
+类名：_91itsoft.PlatSystem.Controllers.AccountController.SignIn  
+描述：Message: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+User_C5FFB82786B19CF89243924684DE74CDCC798B3655ED6B7082BDB54331D07A29 -> UserDTO
+System.Data.Entity.DynamicProxies.User_C5FFB82786B19CF89243924684DE74CDCC798B3655ED6B7082BDB54331D07A29 -> _91itsoft.Application.DTOs.UserDTO
+Type: AutoMapper.AutoMapperMappingException
+StackTrace:    在 lambda_method(Closure , Object , Object , ResolutionContext )
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   在 AutoMapper.Mapper.Map[TDestination](Object source)
+   在 _91itsoft.Application.Converters.SystemConverters.ToDto(User model) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.91itsoft.Application\91itsoft.Application\Converters\System\UserConverters.cs:行号 24
+   在 _91itsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.91itsoft.Application\91itsoft.Application\Services\System\AuthService.cs:行号 62
+   在 _91itsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.91itsoft.Application\91itsoft.Application\AuthorizeManager.cs:行号 166
+   在 _91itsoft.PlatSystem.Controllers.AccountController.SignIn(String returnUrl, String loginName, String password, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.91itsoft.Presentation\91itsoft.PlatSystem\Controllers\AccountController.cs:行号 32
+InnerException:  
+

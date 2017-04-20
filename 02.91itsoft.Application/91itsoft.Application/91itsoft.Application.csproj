@@ -50,11 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorizeManager.cs" />
-    <Compile Include="Converters\System\MenuConverters.cs" />
-    <Compile Include="Converters\System\RoleConverters.cs" />
-    <Compile Include="Converters\System\RoleGroupConverters.cs" />
-    <Compile Include="Converters\System\UserConverters.cs" />
-    <Compile Include="Converters\SystemConverters.cs" />
+    <Compile Include="AutoMappers\System\MenuAutoMapper.cs" />
+    <Compile Include="AutoMappers\System\RoleAutoMapper.cs" />
+    <Compile Include="AutoMappers\System\RoleGroupAutoMapper.cs" />
+    <Compile Include="AutoMappers\System\UserAutoMapper.cs" />
+    <Compile Include="AutoMappers\SystemAutoMapper.cs" />
     <Compile Include="DTOs\IdNameDTO.cs" />
     <Compile Include="DTOs\System\MenuDTO.cs" />
     <Compile Include="DTOs\System\PermissionDTO.cs" />
@@ -98,9 +98,9 @@
     <Compile Include="Services\System\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Converters\Article\" />
-    <Folder Include="Converters\Order\" />
-    <Folder Include="Converters\Product\" />
+    <Folder Include="AutoMappers\Article\" />
+    <Folder Include="AutoMappers\Order\" />
+    <Folder Include="AutoMappers\Product\" />
     <Folder Include="Services\Product\" />
   </ItemGroup>
   <ItemGroup>

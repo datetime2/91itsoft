@@ -1,19 +1,15 @@
-﻿using _91itsoft.Repository.Initializer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
 namespace _91itsoft.PlatSystem
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
-            AutofacConfig.Config();
+            AutofacConfig.initConfig();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleTable.EnableOptimizations = true;
