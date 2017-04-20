@@ -9,7 +9,7 @@ using _91itsoft.Entity;
 
 namespace _91itsoft.Domain.Aggregates.UserAgg
 {
-    [Table("auth.User")]
+    [Table("User")]
     public class User : EntityBase
     {
         public override Guid Id { get; set; }

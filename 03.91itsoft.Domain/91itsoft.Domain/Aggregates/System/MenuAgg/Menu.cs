@@ -6,7 +6,7 @@ using _91itsoft.Entity;
 
 namespace _91itsoft.Domain.Aggregates.MenuAgg
 {
-    [Table("auth.Menu")]
+    [Table("Menu")]
     public class Menu : EntityBase
     {
         public override Guid Id { get; set; }

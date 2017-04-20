@@ -19,6 +19,5 @@ namespace _91itsoft.Plugin.Cache
     }
     public interface IStrategy
     {
-
     }
 }

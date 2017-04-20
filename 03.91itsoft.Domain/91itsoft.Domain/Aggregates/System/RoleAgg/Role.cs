@@ -9,7 +9,7 @@ using _91itsoft.Entity;
 
 namespace _91itsoft.Domain.Aggregates.RoleAgg
 {
-    [Table("auth.Role")]
+    [Table("Role")]
     public class Role : EntityBase
     {
         public override Guid Id { get; set; }

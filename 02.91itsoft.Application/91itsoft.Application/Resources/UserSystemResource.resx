@@ -127,22 +127,22 @@
     <value>邮箱'{0}'已存在</value>
   </data>
   <data name="LoginName_Exists" xml:space="preserve">
-    <value>登陆名'{0}'已存在</value>
+    <value>登录名'{0}'已存在</value>
   </data>
   <data name="Login_NameEmpty" xml:space="preserve">
-    <value>登陆名不能为空</value>
+    <value>登录账号不能为空</value>
   </data>
   <data name="Login_NameNotFound" xml:space="preserve">
-    <value>登陆名不存在</value>
+    <value>登录账号不存在</value>
   </data>
   <data name="Login_PasswordEmpty" xml:space="preserve">
-    <value>密码不能为空</value>
+    <value>登录密码不能为空</value>
   </data>
   <data name="Login_PasswordIncorrect" xml:space="preserve">
-    <value>登陆密码错误</value>
+    <value>登录密码错误</value>
   </data>
   <data name="Login_TokenEmpty" xml:space="preserve">
-    <value>登陆Token不能为空</value>
+    <value>登录Token不能为空</value>
   </data>
   <data name="Menu_Exists" xml:space="preserve">
     <value>菜单已存在</value>

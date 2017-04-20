@@ -24,30 +24,21 @@ namespace _91itsoft.Application.Managers
         }
 
         #region Private Methods
-
         private static string GetTokenKey(string token)
         {
             return string.Format("NLAYER_AUTH_TOKEN_{0}", token);
         }
 
-        private void RegisterToken(string token, string user = "NLayerUser", bool rememberMe = false)
+        private void RegisterToken(string token, string user = "SoftUser", bool rememberMe = false)
         {
             if (token.IsNullOrBlank())
-            {
                 throw new ArgumentNullException("token", token);
-            }
-
             DateTime expiration = rememberMe ? DateTime.Now.AddDays(7) : DateTime.Now.Add(FormsAuthentication.Timeout);
-
             var ticket = new FormsAuthenticationTicket(1, user, DateTime.Now, expiration, true, token, FormsAuthentication.FormsCookiePath);
-
             string hashTicket = FormsAuthentication.Encrypt(ticket);
             var userCookie = new HttpCookie(FormsAuthentication.FormsCookieName, hashTicket) { Domain = FormsAuthentication.CookieDomain };
             if (rememberMe)
-            {
                 userCookie.Expires = expiration;
-            }
-
             HttpContext.Current.Response.Cookies.Set(userCookie);
         }
 
@@ -61,7 +52,6 @@ namespace _91itsoft.Application.Managers
             var key = GetTokenKey(authToken);
             // 缓存起来
             Cache.Set(key, authUser, 12 * 60);
-
             CacheKeys.TryAdd(key, key);
         }
 
@@ -87,15 +77,11 @@ namespace _91itsoft.Application.Managers
                     }
                 }
             }
-
             if (validateLoginToken)
             {
                 if (authUser == null || !AuthService.ValidateLoginToken(authUser.UserId, loginToken))
-                {
                     return null;
-                }
             }
-
             return authUser;
         }
 
@@ -127,13 +113,13 @@ namespace _91itsoft.Application.Managers
                     RoleName = x.RoleName,
                     PermissionSortOrder = x.PermissionSortOrder,
                     MenuSortOrder = x.MenuSortOrder,
-                    //Module = (int)x.Module,
+                    Module = (int)x.Module,
                     ModuleName = x.ModuleName,
                 }).OrderBy(x => x.Module).ThenBy(x => x.MenuSortOrder)
                 .ThenBy(x => x.PermissionSortOrder).ToList();
             authUser.Menus = permissions.Select(x => new MenuForAuthorize()
             {
-                //Module = (int)x.Module,
+                Module = (int)x.Module,
                 MenuId = x.MenuId,
                 MenuName = x.MenuName,
                 MenuUrl = x.MenuUrl,
@@ -149,9 +135,7 @@ namespace _91itsoft.Application.Managers
             {
                 var token = ((FormsIdentity)HttpContext.Current.User.Identity).Ticket.UserData;
                 if (token.NotNullOrBlank())
-                {
                     return token;
-                }
                 throw new AuthorizeTokenNotFoundException();
             }
             throw new AuthorizeTokenNotFoundException();
@@ -160,14 +144,12 @@ namespace _91itsoft.Application.Managers
         public UserForAuthorize GetCurrentUserInfo()
         {
             var token = this.GetCurrentTokenFromCookies();
-
             return GetAuthorizeUserInfo(token);
         }
 
         public UserForAuthorize GetAuthorizeUserInfo(UserToken user)
         {
             var token = user.GetAuthToken();
-
             return GetAuthorizeUserInfo(token, false);
         }
 
@@ -182,14 +164,10 @@ namespace _91itsoft.Application.Managers
         public void SignIn(string loginName, string password, bool rememberMe = false)
         {
             var user = AuthService.Login(loginName, password, true);
-
             var authUser = GetAuthUserFromDb(user);
-
             var dataToken = new UserToken() {UserId = user.Id, LastLoginToken = user.LastLoginToken}.GetAuthToken();
-
             // Cache
             SetCacheAuthUser(dataToken, authUser);
-
             // Cookies
             RegisterToken(dataToken, authUser.UserName, rememberMe);
         }
@@ -199,9 +177,7 @@ namespace _91itsoft.Application.Managers
             try
             {
                 var token = this.GetCurrentTokenFromCookies();
-
                 RemoveToken(token);
-
                 FormsAuthentication.SignOut();
             }
             catch (AuthorizeTokenNotFoundException)
@@ -219,17 +195,10 @@ namespace _91itsoft.Application.Managers
         {
             var user = GetCurrentUserInfo();
             if (user == null)
-            {
                 throw new AuthorizeTokenInvalidException();
-            }
-
             var permission = user.Permissions.FirstOrDefault(x => x.PermissionCode.EqualsIgnoreCase(permissionCode));
-
             if (permission == null && throwExceptionIfNotPass)
-            {
                 throw new AuthorizeNoPermissionException();
-            }
-
             return permission != null;
         }
     }

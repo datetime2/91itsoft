@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _91itsoft.Application.Modules;
+using System;
 namespace _91itsoft.Application.DTOs
 {
     public class PermissionForAuthDTO
@@ -24,6 +25,8 @@ namespace _91itsoft.Application.DTOs
         public int PermissionSortOrder { get; set; }
 
         public int MenuSortOrder { get; set; }
+
+        public ModuleType Module { get; set; }
 
         public string ModuleName { get; set; }
     }

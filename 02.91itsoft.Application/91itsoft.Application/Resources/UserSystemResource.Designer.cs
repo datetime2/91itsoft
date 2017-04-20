@@ -88,7 +88,7 @@ namespace _91itsoft.Application.Resources {
         }
         
         /// <summary>
-        ///   查找类似 登陆名不能为空 的本地化字符串。
+        ///   查找类似 登录账号不能为空 的本地化字符串。
         /// </summary>
         internal static string Login_NameEmpty {
             get {
@@ -97,7 +97,7 @@ namespace _91itsoft.Application.Resources {
         }
         
         /// <summary>
-        ///   查找类似 登陆名不存在 的本地化字符串。
+        ///   查找类似 登录账号不存在 的本地化字符串。
         /// </summary>
         internal static string Login_NameNotFound {
             get {
@@ -106,7 +106,7 @@ namespace _91itsoft.Application.Resources {
         }
         
         /// <summary>
-        ///   查找类似 密码不能为空 的本地化字符串。
+        ///   查找类似 登录密码不能为空 的本地化字符串。
         /// </summary>
         internal static string Login_PasswordEmpty {
             get {
@@ -115,7 +115,7 @@ namespace _91itsoft.Application.Resources {
         }
         
         /// <summary>
-        ///   查找类似 登陆密码错误 的本地化字符串。
+        ///   查找类似 登录密码错误 的本地化字符串。
         /// </summary>
         internal static string Login_PasswordIncorrect {
             get {
@@ -124,7 +124,7 @@ namespace _91itsoft.Application.Resources {
         }
         
         /// <summary>
-        ///   查找类似 登陆Token不能为空 的本地化字符串。
+        ///   查找类似 登录Token不能为空 的本地化字符串。
         /// </summary>
         internal static string Login_TokenEmpty {
             get {
@@ -133,7 +133,7 @@ namespace _91itsoft.Application.Resources {
         }
         
         /// <summary>
-        ///   查找类似 登陆名&apos;{0}&apos;已存在 的本地化字符串。
+        ///   查找类似 登录名&apos;{0}&apos;已存在 的本地化字符串。
         /// </summary>
         internal static string LoginName_Exists {
             get {

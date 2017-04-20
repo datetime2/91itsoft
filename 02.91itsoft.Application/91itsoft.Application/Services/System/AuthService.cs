@@ -134,6 +134,7 @@ namespace _91itsoft.Application.Services
                     MenuName = x.Menu.Name,
                     MenuUrl = x.Menu.Url,
                     RoleName = role.Name,
+
                     PermissionSortOrder = x.SortOrder,
                     MenuSortOrder = x.Menu.SortOrder
                 }));
