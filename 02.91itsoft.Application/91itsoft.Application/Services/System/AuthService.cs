@@ -8,6 +8,7 @@ using _91itsoft.Application.DTOs;
 using _91itsoft.Domain.Aggregates.UserAgg;
 using _91itsoft.Infrastructure.Utility;
 using _91itsoft.Infrastructure.Utility.Helper;
+using _91itsoft.Application.SystemModules;
 
 namespace _91itsoft.Application.Services
 {
@@ -124,7 +125,7 @@ namespace _91itsoft.Application.Services
             var roles = user.Groups.Where(g => g.Roles != null).SelectMany(x => x.Roles);
             foreach (var role in roles.Where(role => role.Permissions != null))
             {
-                permissions.AddRange(role.Permissions.Select(x=>new PermissionForAuthDTO()
+                permissions.AddRange(role.Permissions.Select(x => new PermissionForAuthDTO()
                 {
                     PermissionId = x.Id,
                     PermissionCode = x.Code,
@@ -134,9 +135,10 @@ namespace _91itsoft.Application.Services
                     MenuName = x.Menu.Name,
                     MenuUrl = x.Menu.Url,
                     RoleName = role.Name,
-
                     PermissionSortOrder = x.SortOrder,
-                    MenuSortOrder = x.Menu.SortOrder
+                    MenuSortOrder = x.Menu.SortOrder,
+                    Module = (ModuleType)Enum.Parse(typeof(ModuleType), x.Menu.Module),
+                    ModuleName = ModulesManager.Instance.GetModulesName(x.Menu.Module)
                 }));
             }
             return permissions;
@@ -157,7 +159,9 @@ namespace _91itsoft.Application.Services
                 MenuName = x.Menu.Name,
                 MenuUrl = x.Menu.Url,
                 PermissionSortOrder = x.SortOrder,
-                MenuSortOrder = x.Menu.SortOrder
+                MenuSortOrder = x.Menu.SortOrder,
+                Module = (ModuleType)Enum.Parse(typeof(ModuleType), x.Menu.Module),
+                ModuleName = ModulesManager.Instance.GetModulesName(x.Menu.Module)
             }).ToList()
                 : new List<PermissionForAuthDTO>();
         }
