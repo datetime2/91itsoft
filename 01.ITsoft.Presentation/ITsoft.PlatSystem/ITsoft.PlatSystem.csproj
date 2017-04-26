@@ -224,23 +224,29 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\prettify.css" />
     <Content Include="Content\select2.css" />
+    <Content Include="Content\style\framework-font.css" />
+    <Content Include="Content\style\framework-login.css" />
+    <Content Include="Content\style\framework-ui.css" />
     <Content Include="Content\unicorn.grey.css" />
     <Content Include="Content\unicorn.main.css" />
     <Content Include="Content\uniform.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\weathericons-regular-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\bootstrap-colorpicker.js" />
-    <Content Include="Scripts\bootstrap-datepicker.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\common.js" />
-    <Content Include="Scripts\jquery-1.7.2.min.js" />
-    <Content Include="Scripts\jquery.bootstrap-duallistbox.js" />
-    <Content Include="Scripts\jquery.bootstrap-duallistbox.min.js" />
-    <Content Include="Scripts\jquery.dataTables.min.js" />
-    <Content Include="Scripts\jquery.gritter.min.js" />
-    <Content Include="Scripts\jquery.ui.custom.js" />
-    <Content Include="Scripts\jquery.uniform.js" />
-    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-colorpicker.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\jquery\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery\jquery.bootstrap-duallistbox.js" />
+    <Content Include="Scripts\jquery\jquery.bootstrap-duallistbox.min.js" />
+    <Content Include="Scripts\jquery\jquery.cookie.js" />
+    <Content Include="Scripts\jquery\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery\jquery.gritter.min.js" />
+    <Content Include="Scripts\jquery\jquery.md5.js" />
+    <Content Include="Scripts\jquery\jquery.ui.custom.js" />
+    <Content Include="Scripts\jquery\jquery.uniform.js" />
+    <Content Include="Scripts\jquery\jquery.validate.js" />
     <Content Include="Scripts\plugins\jquery.unobtrusive\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\plugins\jquery.unobtrusive\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\samples\sample.forms.js" />
@@ -251,11 +257,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AjaxExceptionAttribute.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\BaseAuthorizeController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -263,6 +271,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\IServiceResolver.cs" />
+    <Compile Include="Helper\HtmlHelper.cs" />
+    <Compile Include="Helper\ServiceResolver.cs" />
     <Compile Include="Models\AjaxResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -275,9 +286,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Config\log4net.config" />
     <Content Include="Config\autofac.json" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="fonts\weathericons-regular-webfont.eot" />
+    <Content Include="fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="fonts\weathericons-regular-webfont.woff" />
+    <Content Include="fonts\weathericons-regular-webfontd41d.eot" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

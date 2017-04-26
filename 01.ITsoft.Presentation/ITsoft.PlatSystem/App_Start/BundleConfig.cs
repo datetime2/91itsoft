@@ -8,22 +8,22 @@ namespace ITsoft.PlatSystem
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-1.7.2.min.js",
-                        "~/Scripts/jquery.ui.custom.js",
-                        "~/Scripts/jquery.gritter.min.js",
-                        "~/Scripts/plugins/jquery.unobtrusive/jquery.unobtrusive-ajax.min.js"));
+                        "~/Scripts/jquery/jquery-2.1.1.min.js",
+                        "~/Scripts/jquery/jquery.ui.custom.js",
+                        "~/Scripts/jquery/jquery.cookie.js",
+                        "~/Scripts/jquery/jquery.gritter.min.js",
+                        "~/Scripts/jquery/jquery.md5.js",
+                        "~/Scripts/jquery/jquery.bootstrap-duallistbox.min.js",
+                        "~/Scripts/jquery/plugins/jquery.unobtrusive/jquery.unobtrusive-ajax.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.min.js",
-                      "~/Scripts/bootstrap-datepicker.js",
-                      "~/Scripts/bootstrap-colorpicker.js",
-                      "~/Scripts/jquery.bootstrap-duallistbox.min.js"));
+                      "~/Scripts/bootstrap/bootstrap.min.js",
+                      "~/Scripts/bootstrap/bootstrap-datepicker.js",
+                      "~/Scripts/bootstrap/bootstrap-colorpicker.js"
+                      ));
 
             bundles.Add(new ScriptBundle("~/bundles/unicorn").Include(
                       "~/Scripts/unicorn.js"));
-
-            bundles.Add(new ScriptBundle("~/bundles/common").Include(
-                      "~/Scripts/common.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.min.css",

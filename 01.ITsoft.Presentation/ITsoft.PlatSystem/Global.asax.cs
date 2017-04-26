@@ -12,6 +12,7 @@ namespace ITsoft.PlatSystem
             AutofacConfig.initConfig();
             AutoMapperConfig.initConfig();
             AreaRegistration.RegisterAllAreas();
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleTable.EnableOptimizations = true;
             BundleConfig.RegisterBundles(BundleTable.Bundles);

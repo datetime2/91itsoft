@@ -7,31 +7,25 @@ using System;
 using System.Web.Mvc;
 namespace ITsoft.PlatSystem.Controllers
 {
-    public class AccountController : BaseController
+    public class LoginController : BaseController
     {
         IAuthorizeManager AuthorizeManager;
-        public AccountController(IAuthorizeManager authorizeManager)
+        public LoginController(IAuthorizeManager authorizeManager)
         {
             AuthorizeManager = authorizeManager;
         }
         public ActionResult Login()
         {
-            var returnUrl = Request["ReturnUrl"] ?? "/";
-            if (returnUrl.IndexOf("Logout", StringComparison.OrdinalIgnoreCase) > -1)
-                returnUrl = "/";
-            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
-
         [HttpPost]
-        public ActionResult SignIn(string returnUrl, string loginName, string password, bool? rememberMe)
+        public ActionResult SignIn(string ReturnUrl, string LoginName, string PassWord, string Code,bool? rememberMe=true)
         {
             var response = new AjaxResponse();
             try
             {
-                AuthorizeManager.SignIn(loginName, password, rememberMe.HasValue && rememberMe.Value);
+                AuthorizeManager.SignIn(LoginName, PassWord, rememberMe.Value);
                 response.Succeeded = true;
-                response.RedirectUrl = returnUrl;
             }
             catch (Exception ex)
             {
@@ -44,6 +38,14 @@ namespace ITsoft.PlatSystem.Controllers
                 response.ShowMessage = true;
             }
             return Json(response);
+        }
+        [HttpGet]
+        public ActionResult AuthCode()
+        {
+            string code;
+            var file = VerifyCode.GetVerifyCode(out code);
+            Session["checkCode"] = code;
+            return File(file, @"image/Gif");
         }
     }
 }

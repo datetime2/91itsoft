@@ -1,0 +1,80 @@
+时间：2017-04-26 13:27:49,852 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 登录密码错误
+Type: ITsoft.Application.Exceptions.NotEqualException
+StackTrace:    在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 54
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 154
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String returnUrl, String loginName, String password, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 32
+InnerException:  
+
+时间：2017-04-26 16:29:10,457 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 登录密码错误
+Type: ITsoft.Application.Exceptions.NotEqualException
+StackTrace:    在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 54
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 154
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 27
+InnerException:  
+
+时间：2017-04-26 16:29:23,718 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 登录密码错误
+Type: ITsoft.Application.Exceptions.NotEqualException
+StackTrace:    在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 54
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 154
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 27
+InnerException:  
+
+时间：2017-04-26 16:29:34,891 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 登录密码错误
+Type: ITsoft.Application.Exceptions.NotEqualException
+StackTrace:    在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 54
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 154
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 27
+InnerException:  
+
+时间：2017-04-26 16:30:28,970 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 登录密码错误
+Type: ITsoft.Application.Exceptions.NotEqualException
+StackTrace:    在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 54
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 154
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 27
+InnerException:  
+
+时间：2017-04-26 16:30:32,493 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 登录密码错误
+Type: ITsoft.Application.Exceptions.NotEqualException
+StackTrace:    在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 54
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 154
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 27
+InnerException:  
+
+时间：2017-04-26 16:30:37,682 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 登录账号不存在
+Type: ITsoft.Application.Exceptions.NotFoundException
+StackTrace:    在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 52
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 154
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 27
+InnerException:  
+
+时间：2017-04-26 16:30:46,579 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 登录密码错误
+Type: ITsoft.Application.Exceptions.NotEqualException
+StackTrace:    在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 54
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 154
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 27
+InnerException:  
+

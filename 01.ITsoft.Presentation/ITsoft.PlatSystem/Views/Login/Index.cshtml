@@ -1,0 +1,153 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="~/Content/style/framework-font.css" rel="stylesheet" />
+    <link href="~/Content/style/framework-login.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    <!--[if lte IE 8]>
+        <div id="errorie"><div>您还在使用老掉牙的IE，正常使用系统前请升级您的浏览器到 IE8以上版本 <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">点击升级</a>&nbsp;&nbsp;强烈建议您更改换浏览器：<a href="http://down.tech.sina.com.cn/content/40975.html" target="_blank">谷歌 Chrome</a></div></div>
+    <![endif]-->
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <form class="form">
+                <div class="row">
+                    <input id="loginName" name="loginName" type="text" placeholder="用户名/手机号/邮箱">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="row">
+                    <input id="passWord" name="passWord" type="password" placeholder="登录密码">
+                    <i class="fa fa-key"></i>
+                </div>
+                <div class="row">
+                    <input id="identCode" name="identCode" maxlength="4" type="text" placeholder="验证码" style="width: 190px; float: left;">
+                    <div style="width: 110px; float: right; padding-top: 14px; padding-left: 14px;">
+                        看不清?<a id="switchCode" href="javascript:void();" style="text-decoration: none;">换一张</a>
+                        <img id="imgcode" class="authcode" src="/Login/AuthCode" width="80" height="25" />
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="btn-login" type="button"><span>登录</span></button>
+                </div>
+                <div class="row">
+                </div>
+            </form>
+            <div class="tips-login"></div>
+        </div>
+        <ul class="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        (function ($) {
+            $.login = {
+                formMessage: function (msg) {
+                    $('.tips-login').find('.tips_msg').remove();
+                    $('.tips-login').append('<div class="tips_msg"><i class="fa fa-question-circle"></i>' + msg + '</div>');
+                },
+                loginClick: function () {
+                    var $username = $("#loginName");
+                    var $password = $("#passWord");
+                    var $code = $("#identCode");
+                    if ($username.val() == "") {
+                        $username.focus();
+                        $.login.formMessage('请输入用户名/手机号/邮箱。');
+                        return false;
+                    } else if ($password.val() == "") {
+                        $password.focus();
+                        $.login.formMessage('请输入登录密码。');
+                        return false;
+                    } else if ($code.val() == "") {
+                        $code.focus();
+                        $.login.formMessage('请输入验证码。');
+                        return false;
+                    } else {
+                        $("#btn-login").attr('disabled', 'disabled').find('span').html("loading...");
+                        $.ajax({
+                            url: "/Login/SignIn",
+                            data: { LoginName: $.trim($username.val()), PassWord: $.md5($.trim($password.val())), Code: $.trim($code.val()) },
+                            type: "post",
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.Succeeded) {
+                                    $("#btn-login").find('span').html("登录成功，正在跳转...");
+                                    window.setTimeout(function () {
+                                        window.location.href = "/Home";
+                                    }, 500);
+                                } else {
+                                    $("#btn-login").removeAttr('disabled').find('span').html("登录");
+                                    $("#switchCode").trigger("click");
+                                    $code.val('');
+                                    $.login.formMessage(data.ErrorMessage);
+                                }
+                            },
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                $("#btn-login").removeAttr('disabled').find('span').html("登录");
+                                $("#switchCode").trigger("click");
+                                $code.val('');
+                                $.login.formMessage("请求失败，状态返回：" + XMLHttpRequest.status + "," + textStatus);
+                            }
+                        });
+                    }
+                },
+                init: function () {
+                    $('.wrapper').height($(window).height());
+                    $(".container").css("margin-top", ($(window).height() - $(".container").height()) / 2 - 50);
+                    $(window).resize(function (e) {
+                        $('.wrapper').height($(window).height());
+                        $(".container").css("margin-top", ($(window).height() - $(".container").height()) / 2 - 50);
+                    });
+                    $("#switchCode").click(function () {
+                        $("#imgcode").attr("src", "/Login/AuthCode?time=" + Math.random());
+                    });
+                    var login_error = top.$.cookie('login-error');
+                    if (login_error != null) {
+                        switch (login_error) {
+                            case "overdue":
+                                $.login.formMessage("系统登录已超时,请重新登录");
+                                break;
+                            case "OnLine":
+                                $.login.formMessage("您的帐号已在其它地方登录,请重新登录");
+                                break;
+                            case "-1":
+                                $.login.formMessage("系统未知错误,请重新登录");
+                                break;
+                        }
+                        top.$.cookie('login-error', '', { path: "/", expires: -1 });
+                    }
+                    $("#btn-login").click(function () {
+                        $.login.loginClick();
+                    });
+                    document.onkeydown = function (e) {
+                        if (!e) e = window.event;
+                        if ((e.keyCode || e.which) == 13) {
+                            document.getElementById("btn-login").focus();
+                            document.getElementById("btn-login").click();
+                        }
+                    }
+                }
+            };
+            $(function () {
+                $.login.init();
+            });
+        })(jQuery);
+    </script>
+</body>
+</html>

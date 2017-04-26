@@ -15,9 +15,8 @@ namespace ITsoft.Domain.Aggregates
         public string LoginName { get; set; }
 
         public string LoginPwd { get; set; }
-
+        public string PwdSalt { get; set; }
         public string Email { get; set; }
-
         public DateTime Created { get; set; }
 
         public string LastLoginToken { get; set; }
