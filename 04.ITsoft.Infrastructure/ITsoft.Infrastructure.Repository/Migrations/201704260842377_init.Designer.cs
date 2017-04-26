@@ -13,7 +13,7 @@ namespace ITsoft.Infrastructure.Repository.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201704200235522_init"; }
+            get { return "201704260842377_init"; }
         }
         
         string IMigrationMetadata.Source

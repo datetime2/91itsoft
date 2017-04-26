@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ITsoft.Infrastructure.Utility.Helper;
+using System.Security.Cryptography;
 
 namespace ITsoft.Infrastructure.Utility
 {
@@ -68,6 +69,22 @@ namespace ITsoft.Infrastructure.Utility
             byte[] sha1Bytes = System.Security.Cryptography.SHA1.Create().ComputeHash(bytes);
             string secretPart = BitConverter.ToString(sha1Bytes).Replace("-", string.Empty);
             return secretPart;
+        }
+        public static string Md5(string inputStr)
+        {
+            byte[] buffer = new MD5CryptoServiceProvider().ComputeHash(Encoding.UTF8.GetBytes(inputStr));
+            StringBuilder builder = new StringBuilder();
+            foreach (byte num in buffer)
+            {
+                builder.Append(num.ToString("x").PadLeft(2, '0'));
+            }
+            return builder.ToString();
+        }
+        public static string SaltWithTwiceMd5(string password, string salt)
+        {
+            string encryptedPassword = Md5(password);
+            string encryptedWithSaltPassword = Md5(encryptedPassword + salt);
+            return encryptedWithSaltPassword;
         }
     }
 }

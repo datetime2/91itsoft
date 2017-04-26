@@ -49,7 +49,7 @@ namespace ITsoft.Application.Services
             var user = _UserRepository.Find(x => x.LoginName.Equals(loginName));
             if (user == null)
                 throw new NotFoundException(UserSystemResource.Login_NameNotFound);
-            if (!EncryptPassword(password).EqualsIgnoreCase(user.LoginPwd))
+            if (!EncryptPassword(password,user.PwdSalt,true).EqualsIgnoreCase(user.LoginPwd))
                 throw new NotEqualException(UserSystemResource.Login_PasswordIncorrect);
             if (updateLoginToken)
             {
@@ -67,7 +67,7 @@ namespace ITsoft.Application.Services
             var user = _UserRepository.Get(id);
             if (user == null)
                 throw new ArgumentException(id.ToString(), "id");
-            return EncryptPassword(password).EqualsIgnoreCase(user.LoginPwd);
+            return EncryptPassword(password,user.PwdSalt,true).EqualsIgnoreCase(user.LoginPwd);
         }
 
         public void ChangePassword(Guid id, string password)
@@ -75,7 +75,7 @@ namespace ITsoft.Application.Services
             var user = _UserRepository.Get(id);
             if (user == null)
                 throw new ArgumentException(id.ToString(), "id");
-            user.LoginPwd = EncryptPassword(password);
+            user.LoginPwd = EncryptPassword(password, user.PwdSalt, true);
             //commit unit of work
             _UserRepository.UnitOfWork.Commit();
         }
@@ -83,36 +83,21 @@ namespace ITsoft.Application.Services
         public bool ValidateLoginToken(Guid id, string token)
         {
             if (token.IsNullOrBlank())
-            {
                 throw new ArgumentException(token, "token");
-            }
-
             var user = _UserRepository.Get(id);
-
             if (user == null)
-            {
                 throw new ArgumentException(id.ToString(), "id");
-            }
-
             return token.EqualsIgnoreCase(user.LastLoginToken);
         }
 
         public UserDTO FindByLoginToken(Guid id, string token)
         {
             var user = _UserRepository.Get(id);
-
             if (user == null)
-            {
                 throw new ArgumentException(id.ToString(), "id");
-            }
-
             user.LastLoginToken = user.LastLoginToken ?? string.Empty;
-
             if (!user.LastLoginToken.EqualsIgnoreCase(token))
-            {
                 throw new DataNotFoundException(UserSystemResource.User_NotExists);
-            }
-
             return user.ToDto();
         }
 
@@ -165,10 +150,19 @@ namespace ITsoft.Application.Services
             }).ToList()
                 : new List<PermissionForAuthDTO>();
         }
-
-        public static string EncryptPassword(string password)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="passsalt"></param>
+        /// <param name="isMD5">是否传递的MD5后的密码</param>
+        /// <returns></returns>
+        public static string EncryptPassword(string password, string passsalt, bool? isMD5 = false)
         {
-            return SecurityHelper.EncryptPassword(password);
+            if (!isMD5.Value)
+                return SecurityHelper.Md5(SecurityHelper.Md5(password) + passsalt);
+            else
+                return SecurityHelper.Md5(password + passsalt);
         }
     }
 }

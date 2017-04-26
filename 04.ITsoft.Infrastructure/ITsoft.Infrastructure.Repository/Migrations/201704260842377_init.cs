@@ -72,6 +72,7 @@ namespace ITsoft.Infrastructure.Repository.Migrations
                         Name = c.String(),
                         LoginName = c.String(),
                         LoginPwd = c.String(),
+                        PwdSalt = c.String(),
                         Email = c.String(),
                         Created = c.DateTime(nullable: false),
                         LastLoginToken = c.String(),

@@ -37,20 +37,13 @@ namespace ITsoft.Application.Services
             user.Id = IdentityGenerator.NewSequentialGuid();
             user.Created = DateTime.UtcNow;
             user.LastLogin = Const.SqlServerNullDateTime;
-
+            user.PwdSalt = Guid.NewGuid().ToString();
             if (user.Name.IsNullOrBlank())
-            {
                 throw new DataExistsException(UserSystemResource.Common_Name_Empty);
-            }
-
             if (_Repository.Exists(user))
-            {
                 throw new DataExistsException(UserSystemResource.User_Exists);
-            }
-
-            user.LoginPwd = AuthService.EncryptPassword(user.LoginPwd);
+            user.LoginPwd = AuthService.EncryptPassword(user.LoginPwd, user.PwdSalt);
             _Repository.Add(user);
-
             //commit the unit of work
             _Repository.UnitOfWork.Commit();
 

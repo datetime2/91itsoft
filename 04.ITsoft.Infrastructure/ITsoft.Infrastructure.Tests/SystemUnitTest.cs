@@ -29,7 +29,7 @@ namespace ITsoft.Infrastructure.Tests
                 const string password = "123456";
 
                 var user = unitOfWork.Users.FirstOrDefault(x => x.LoginName.Equals(loginName));
-
+                string salt = Guid.NewGuid().ToString();
                 if (user == null)
                 {
                     user = new User()
@@ -37,9 +37,10 @@ namespace ITsoft.Infrastructure.Tests
                         Id = IdentityGenerator.NewSequentialGuid(),
                         Name = "管理员",
                         LoginName = loginName,
-                        LoginPwd = SecurityHelper.EncryptPassword(password),
+                        LoginPwd = SecurityHelper.Md5(SecurityHelper.Md5(password) + salt),
                         Created = DateTime.UtcNow,
-                        LastLogin = Const.SqlServerNullDateTime
+                        LastLogin = Const.SqlServerNullDateTime,
+                        PwdSalt = salt
                     };
 
                     unitOfWork.Users.Add(user);
