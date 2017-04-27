@@ -22,21 +22,18 @@ namespace ITsoft.PlatSystem
                       "~/Scripts/bootstrap/bootstrap-colorpicker.js"
                       ));
 
-            bundles.Add(new ScriptBundle("~/bundles/unicorn").Include(
-                      "~/Scripts/unicorn.js"));
+            bundles.Add(new ScriptBundle("~/bundles/custom").Include(
+                      "~/Scripts/plugins/dialog/dialog.js", "~/Scripts/plugins/dialog/dialog.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/framework").Include(
+          "~/Scripts/framework/framework-ui.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.min.css",
-                      "~/Content/bootstrap-responsive.min.css",
-                      "~/Content/datepicker.css",
-                      "~/Content/colorpicker.css",
-                      "~/Content/bootstrap-duallistbox.min.css",
-                      "~/Content/prettify.css",
-                      "~/Content/common.css",
-                      "~/Content/unicorn.css",
-                      "~/Content/unicorn.main.css",
-                      "~/Content/unicorn.grey.css",
-                      "~/Content/jquery.gritter.css"));
+                      "~/Content/style/framework-font.css",
+                      "~/Content/style/framework-theme.css",
+                      "~/Content/style/framework-login.css",
+                      "~/Content/style/framework-ui.css"
+                     ));
         }
     }
 }

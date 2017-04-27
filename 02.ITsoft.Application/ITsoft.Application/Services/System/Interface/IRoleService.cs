@@ -17,7 +17,7 @@ namespace ITsoft.Application.Services
 
         RoleDTO FindBy(Guid id);
 
-        IPagedList<RoleDTO> FindBy(Guid roleGroupId, string name, int pageNumber, int pageSize);
+        IPagedList<RoleDTO> FindBy(string name, int pageNumber, int pageSize);
 
         void UpdateRolePermission(Guid id, List<Guid> permissions);
 

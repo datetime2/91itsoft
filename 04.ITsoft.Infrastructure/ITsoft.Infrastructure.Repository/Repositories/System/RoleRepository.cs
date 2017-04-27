@@ -16,22 +16,14 @@ namespace ITsoft.Repository.Repositories
         {
         }
 
-        public IPagedList<Role> FindBy(Guid roleGroupId, string name, int pageNumber, int pageSize)
+        public IPagedList<Role> FindBy(string name, int pageNumber, int pageSize)
         {
             IQueryable<Role> entities = Table;
-
-            if (roleGroupId != Guid.Empty)
-            {
-                entities =
-                    entities.Where(x => x.RoleGroup.Id == roleGroupId);
-            }
-
             if (name.NotNullOrBlank())
             {
                 entities =
                     entities.Where(x => x.Name.Contains(name));
             }
-
             var totalCountQuery = entities.FutureCount();
             var resultQuery = entities
                 .OrderBy(x => x.SortOrder)
@@ -52,11 +44,9 @@ namespace ITsoft.Repository.Repositories
         public new bool Exists(Role item)
         {
             IQueryable<Role> entities = Table;
-            entities = entities.Where(x => x.RoleGroup.Id == item.RoleGroup.Id && x.Name == item.Name);
+            entities = entities.Where(x => x.Name == item.Name);
             if (item.Id != Guid.Empty)
-            {
                 entities = entities.Where(x => x.Id != item.Id);
-            }
             return entities.Any();
         }
     }

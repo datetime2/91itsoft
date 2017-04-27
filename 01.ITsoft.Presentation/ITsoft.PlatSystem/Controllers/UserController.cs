@@ -8,5 +8,6 @@ namespace ITsoft.PlatSystem.Controllers
 {
     public class UserController : BaseAuthorizeController
     {
+
     }
 }

@@ -24,7 +24,7 @@ namespace ITsoft.Plugin.Cache.AspNet
         }
         public T Get<T>(string key)
         {
-            return _cache[key] != null ? JsonConvert.DeserializeObject<T>(_cache[key].ToString()) : default(T);
+            return _cache[key] != null ? (T)_cache[key] : default(T);
         }
         public bool IsSet(string key)
         {

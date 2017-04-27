@@ -16,11 +16,6 @@ namespace ITsoft.Application.Services
         UserDTO FindBy(Guid id);
 
         IPagedList<UserDTO> FindBy(string name, int pageNumber, int pageSize);
-
-        void UpdateUserPermission(Guid id, List<Guid> permissions);
-
-        List<PermissionDTO> GetUserPermission(Guid id);
-
         List<IdNameDTO> GetAllUsersIdName();
     }
 }

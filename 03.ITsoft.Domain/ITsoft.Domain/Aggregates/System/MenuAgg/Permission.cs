@@ -22,8 +22,6 @@ namespace ITsoft.Domain.Aggregates
 
         public virtual Menu Menu { get; set; }
 
-        public virtual ICollection<User> Users { get; set; }
-
         public virtual ICollection<Role> Roles { get; set; }
     }
 }

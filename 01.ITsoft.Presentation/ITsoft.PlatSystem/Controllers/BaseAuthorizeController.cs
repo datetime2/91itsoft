@@ -15,7 +15,10 @@ namespace ITsoft.PlatSystem.Controllers
         }
         public ServiceResolver ServiceResolver
         {
-            get { return _serviceResolver ?? (_serviceResolver = new ServiceResolver()); }
+            get
+            {
+                return _serviceResolver ?? (_serviceResolver = new ServiceResolver());
+            }
         }
         private IAuthorizeManager AuthorizeManager
         {

@@ -8,6 +8,9 @@ namespace ITsoft.PlatSystem.Controllers
 {
     public class HomeController : BaseAuthorizeController
     {
-
+        public ActionResult Main()
+        {
+            return View();
+        }
     }
 }

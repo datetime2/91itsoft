@@ -9,9 +9,8 @@ namespace ITsoft.Domain.Aggregates
     public class Menu : EntityBase
     {
         public override Guid Id { get; set; }
-
+        public Guid ParentId { get; set; }
         public string Name { get; set; }
-
         public string Code { get; set; }
 
         public string Url { get; set; }

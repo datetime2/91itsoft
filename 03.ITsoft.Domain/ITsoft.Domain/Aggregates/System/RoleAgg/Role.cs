@@ -18,8 +18,6 @@ namespace ITsoft.Domain.Aggregates
 
         public DateTime Created { get; set; }
 
-        public virtual RoleGroup RoleGroup { get; set; }
-
         public virtual ICollection<User> Users { get; set; }
 
         public virtual ICollection<Permission> Permissions { get; set; }

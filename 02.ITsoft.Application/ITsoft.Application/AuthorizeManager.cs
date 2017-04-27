@@ -86,7 +86,6 @@ namespace ITsoft.Application.Managers
             };
             // 权限和菜单信息
             var permissions = new List<PermissionForAuthDTO>();
-            permissions.AddRange(AuthService.GetRolePermissions(user.Id));
             permissions.AddRange(AuthService.GetUserPermissions(user.Id));
             authUser.Permissions = permissions.Select(x =>
                 new PermissionForAuthorize()

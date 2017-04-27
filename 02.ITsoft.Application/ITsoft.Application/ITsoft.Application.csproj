@@ -52,14 +52,12 @@
     <Compile Include="AuthorizeManager.cs" />
     <Compile Include="AutoMappers\System\MenuMapper.cs" />
     <Compile Include="AutoMappers\System\RoleMapper.cs" />
-    <Compile Include="AutoMappers\System\RoleGroupMapper.cs" />
     <Compile Include="AutoMappers\System\UserMapper.cs" />
     <Compile Include="DTOs\IdNameDTO.cs" />
     <Compile Include="DTOs\System\MenuDTO.cs" />
     <Compile Include="DTOs\System\PermissionDTO.cs" />
     <Compile Include="DTOs\System\PermissionForAuthDTO.cs" />
     <Compile Include="DTOs\System\RoleDTO.cs" />
-    <Compile Include="DTOs\System\RoleGroupDTO.cs" />
     <Compile Include="DTOs\System\UserDTO.cs" />
     <Compile Include="Exceptions\ArgumentEmptyException.cs" />
     <Compile Include="Exceptions\DataExistsException.cs" />
@@ -88,11 +86,9 @@
     <Compile Include="Services\System\AuthService.cs" />
     <Compile Include="Services\System\Interface\IAuthService.cs" />
     <Compile Include="Services\System\Interface\IMenuService.cs" />
-    <Compile Include="Services\System\Interface\IRoleGroupService.cs" />
     <Compile Include="Services\System\Interface\IRoleService.cs" />
     <Compile Include="Services\System\Interface\IUserService.cs" />
     <Compile Include="Services\System\MenuService.cs" />
-    <Compile Include="Services\System\RoleGroupService.cs" />
     <Compile Include="Services\System\RoleService.cs" />
     <Compile Include="Services\System\UserService.cs" />
   </ItemGroup>

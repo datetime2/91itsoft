@@ -51,8 +51,6 @@
     <Compile Include="Aggregates\System\MenuAgg\Permission.cs" />
     <Compile Include="IRepository\System\IRoleRepository.cs" />
     <Compile Include="Aggregates\System\RoleAgg\Role.cs" />
-    <Compile Include="IRepository\System\IRoleGroupRepository.cs" />
-    <Compile Include="Aggregates\System\RoleGroupAgg\RoleGroup.cs" />
     <Compile Include="IRepository\System\IUserRepository.cs" />
     <Compile Include="Aggregates\System\UserAgg\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
