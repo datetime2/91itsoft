@@ -16,7 +16,7 @@ namespace ITsoft.Domain.Aggregates
         public string Url { get; set; }
 
         public string Module { get; set; }
-
+        public string Icon { get; set; }
         public int SortOrder { get; set; }
 
         public DateTime Created { get; set; }

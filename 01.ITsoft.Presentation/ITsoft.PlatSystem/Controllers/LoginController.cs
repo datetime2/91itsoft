@@ -14,9 +14,11 @@ namespace ITsoft.PlatSystem.Controllers
         {
             AuthorizeManager = authorizeManager;
         }
-        public ActionResult Login()
+        public ActionResult Logout()
         {
-            return View();
+            AuthorizeManager.SignOut();
+            AuthorizeManager.RedirectToLoginPage();
+            return null;
         }
         [HttpPost]
         public ActionResult SignIn(string ReturnUrl, string LoginName, string PassWord, string Code,bool? rememberMe=true)

@@ -12,5 +12,11 @@ namespace ITsoft.PlatSystem.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public JsonResult Permission()
+        {
+
+            return Json(null, JsonRequestBehavior.AllowGet);
+        }
     }
 }

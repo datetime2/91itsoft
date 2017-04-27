@@ -14,8 +14,8 @@ namespace ITsoft.PlatSystem
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleTable.EnableOptimizations = true;
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            //BundleTable.EnableOptimizations = true;
+            //BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }
