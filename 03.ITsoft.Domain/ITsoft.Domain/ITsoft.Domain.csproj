@@ -54,6 +54,7 @@
     <Compile Include="IRepository\System\IUserRepository.cs" />
     <Compile Include="Aggregates\System\UserAgg\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryModel\BaseQueryModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\04.ITsoft.Infrastructure\ITsoft.Infrastructure\ITsoft.Infrastructure.csproj">

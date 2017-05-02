@@ -17,8 +17,8 @@ namespace ITsoft.PlatSystem.Controllers
         [HttpGet]
         public JsonResult Permission()
         {
-
-            return Json(null, JsonRequestBehavior.AllowGet);
+            var menus = _menuService.FindByModule("系统");
+            return Json(menus, JsonRequestBehavior.AllowGet);
         }
     }
 }

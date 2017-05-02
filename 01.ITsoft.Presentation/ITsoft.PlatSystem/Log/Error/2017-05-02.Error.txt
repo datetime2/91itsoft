@@ -103,3 +103,96 @@ InnerException: Message: 列名 'IsEnable' 无效。
 	   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
 	InnerException:  
 
+时间：2017-05-02 10:56:49,337 
+级别：ERROR 
+类名：ITsoft.PlatSystem.AjaxExceptionAttribute.OnException  
+描述：Message: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Menu_54B90EEDD2FF04B7C48DEF0EE62F0DEFA50AEB475146E5E7808F611E4C83BE66 -> MenuDTO
+System.Data.Entity.DynamicProxies.Menu_54B90EEDD2FF04B7C48DEF0EE62F0DEFA50AEB475146E5E7808F611E4C83BE66 -> ITsoft.Application.DTOs.MenuDTO
+Type: AutoMapper.AutoMapperMappingException
+StackTrace:    在 lambda_method(Closure , Object , Object , ResolutionContext )
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   在 ITsoft.Application.AutoMappers.SystemMapper.ToDto(Menu model) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AutoMappers\System\MenuMapper.cs:行号 15
+   在 ITsoft.Application.Services.MenuService.<>c.<FindByModule>b__9_0(Menu x) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\MenuService.cs:行号 180
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 ITsoft.Application.Services.MenuService.FindByModule(String module) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\MenuService.cs:行号 180
+   在 ITsoft.PlatSystem.Controllers.HomeController.Permission() 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+InnerException:  
+
+时间：2017-05-02 13:34:53,380 
+级别：ERROR 
+类名：ITsoft.PlatSystem.AjaxExceptionAttribute.OnException  
+描述：Message: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Menu_54B90EEDD2FF04B7C48DEF0EE62F0DEFA50AEB475146E5E7808F611E4C83BE66 -> MenuDTO
+System.Data.Entity.DynamicProxies.Menu_54B90EEDD2FF04B7C48DEF0EE62F0DEFA50AEB475146E5E7808F611E4C83BE66 -> ITsoft.Application.DTOs.MenuDTO
+Type: AutoMapper.AutoMapperMappingException
+StackTrace:    在 lambda_method(Closure , Object , Object , ResolutionContext )
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   在 ITsoft.Application.AutoMappers.SystemMapper.ToDto(Menu model) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AutoMappers\System\MenuMapper.cs:行号 15
+   在 ITsoft.Application.Services.MenuService.<>c.<FindByModule>b__9_0(Menu x) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\MenuService.cs:行号 180
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 ITsoft.Application.Services.MenuService.FindByModule(String module) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\MenuService.cs:行号 180
+   在 ITsoft.PlatSystem.Controllers.HomeController.Permission() 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+InnerException:  
+
+时间：2017-05-02 13:39:36,706 
+级别：ERROR 
+类名：ITsoft.PlatSystem.AjaxExceptionAttribute.OnException  
+描述：Message: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Menu_54B90EEDD2FF04B7C48DEF0EE62F0DEFA50AEB475146E5E7808F611E4C83BE66 -> MenuDTO
+System.Data.Entity.DynamicProxies.Menu_54B90EEDD2FF04B7C48DEF0EE62F0DEFA50AEB475146E5E7808F611E4C83BE66 -> ITsoft.Application.DTOs.MenuDTO
+Type: AutoMapper.AutoMapperMappingException
+StackTrace:    在 lambda_method(Closure , Object , Object , ResolutionContext )
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source)
+   在 ITsoft.Application.AutoMappers.SystemMapper.ToDto(Menu model) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AutoMappers\System\MenuMapper.cs:行号 15
+   在 ITsoft.Application.Services.MenuService.<>c.<FindByModule>b__9_0(Menu x) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\MenuService.cs:行号 180
+   在 System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 ITsoft.Application.Services.MenuService.FindByModule(String module) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\MenuService.cs:行号 180
+   在 ITsoft.PlatSystem.Controllers.HomeController.Permission() 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\HomeController.cs:行号 20
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+InnerException:  
+
