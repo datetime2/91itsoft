@@ -48,6 +48,7 @@
     <Compile Include="AuthObject\PermissionForAuthorize.cs" />
     <Compile Include="AuthObject\UserForAuthorize.cs" />
     <Compile Include="AuthObject\UserToken.cs" />
+    <Compile Include="ButtonForAuthorize.cs" />
     <Compile Include="Exceptions\AuthorizeException.cs" />
     <Compile Include="AuthorizeFilter.cs" />
     <Compile Include="Interface\IAuthorizeManager.cs" />

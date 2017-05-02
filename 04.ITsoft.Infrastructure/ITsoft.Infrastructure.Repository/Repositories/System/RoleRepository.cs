@@ -7,6 +7,7 @@ using ITsoft.Repository.UnitOfWork;
 using PagedList;
 using ITsoft.Domain.Aggregates;
 using ITsoft.Domain.IRepository;
+using ITsoft.Domain.QueryModel;
 
 namespace ITsoft.Repository.Repositories
 {
@@ -16,19 +17,19 @@ namespace ITsoft.Repository.Repositories
         {
         }
 
-        public IPagedList<Role> FindBy(string name, int pageNumber, int pageSize)
+        public IPagedList<Role> FindBy(RoleQueryModel query)
         {
             IQueryable<Role> entities = Table;
-            if (name.NotNullOrBlank())
+            if (query.Name.NotNullOrBlank())
             {
                 entities =
-                    entities.Where(x => x.Name.Contains(name));
+                    entities.Where(x => x.Name.Contains(query.Name));
             }
             var totalCountQuery = entities.FutureCount();
             var resultQuery = entities
                 .OrderBy(x => x.SortOrder)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
+                .Skip((query.PageNumber.Value - 1) * query.PageSize.Value)
+                .Take(query.PageSize.Value)
                 .Future();
 
             var totalCount = totalCountQuery.Value;
@@ -36,8 +37,8 @@ namespace ITsoft.Repository.Repositories
 
             return new StaticPagedList<Role>(
                 result,
-                pageNumber,
-                pageSize,
+                query.PageNumber.Value,
+                query.PageSize.Value,
                 totalCount);
         }
 

@@ -85,33 +85,20 @@ namespace ITsoft.Application.Managers
                 UserName = user.Name
             };
             // 权限和菜单信息
-            var permissions = new List<PermissionForAuthDTO>();
-            permissions.AddRange(AuthService.GetUserPermissions(user.Id));
-            authUser.Permissions = permissions.Select(x =>
-                new PermissionForAuthorize()
-                {
-                    PermissionId = x.PermissionId,
-                    PermissionCode = x.PermissionCode,
-                    MenuId = x.MenuId,
-                    RoleId = x.RoleId,
-                    FromUser = x.FromUser,
-                    PermissionName = x.PermissionName,
-                    MenuName = x.MenuName,
-                    MenuUrl = x.MenuUrl,
-                    RoleName = x.RoleName,
-                    PermissionSortOrder = x.PermissionSortOrder,
-                    MenuSortOrder = x.MenuSortOrder,
-                    Module = (int)x.Module,
-                    ModuleName = x.ModuleName,
-                }).OrderBy(x => x.Module).ThenBy(x => x.MenuSortOrder)
-                .ThenBy(x => x.PermissionSortOrder).ToList();
-            authUser.Menus = permissions.Select(x => new MenuForAuthorize()
+            var menus = AuthService.GetUserMenus(user.Id);
+            //按钮
+
+            //菜单
+            authUser.Menus = menus.Select(x => new MenuForAuthorize()
             {
-                Module = (int)x.Module,
-                MenuId = x.MenuId,
-                MenuName = x.MenuName,
-                MenuUrl = x.MenuUrl,
-            }).DistinctBy(x => x.MenuId).ToList();
+                MenuId = x.Id,
+                ParentId = x.ParentId,
+                MenuName = x.Name,
+                MenuUrl = x.Url,
+                MenuIcon = x.Icon,
+                MenuCode=x.Code,
+                SortOrder = x.SortOrder
+            }).OrderBy(x => x.SortOrder).ToList();
             return authUser;
         }
         #endregion
@@ -178,12 +165,12 @@ namespace ITsoft.Application.Managers
             FormsAuthentication.RedirectToLoginPage();
         }
 
-        public bool ValidatePermission(string permissionCode, bool throwExceptionIfNotPass = true)
+        public bool ValidatePermission(string code, bool throwExceptionIfNotPass = true)
         {
             var user = GetCurrentUserInfo();
             if (user == null)
                 throw new AuthorizeTokenInvalidException();
-            var permission = user.Permissions.FirstOrDefault(x => x.PermissionCode.EqualsIgnoreCase(permissionCode));
+            var permission = user.Menus.FirstOrDefault(x => x.MenuCode.Equals(code));
             if (permission == null && throwExceptionIfNotPass)
                 throw new AuthorizeNoPermissionException();
             return permission != null;

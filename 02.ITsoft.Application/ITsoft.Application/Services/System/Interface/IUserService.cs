@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ITsoft.Application.DTOs;
 using PagedList;
+using ITsoft.Domain.QueryModel;
 
 namespace ITsoft.Application.Services
 {
@@ -15,7 +16,7 @@ namespace ITsoft.Application.Services
 
         UserDTO FindBy(Guid id);
 
-        IPagedList<UserDTO> FindBy(string name, int pageNumber, int pageSize);
+        IPagedList<UserDTO> FindBy(UserQueryModel query);
         List<IdNameDTO> GetAllUsersIdName();
     }
 }

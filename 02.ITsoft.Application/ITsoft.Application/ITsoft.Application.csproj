@@ -55,8 +55,6 @@
     <Compile Include="AutoMappers\System\UserMapper.cs" />
     <Compile Include="DTOs\IdNameDTO.cs" />
     <Compile Include="DTOs\System\MenuDTO.cs" />
-    <Compile Include="DTOs\System\PermissionDTO.cs" />
-    <Compile Include="DTOs\System\PermissionForAuthDTO.cs" />
     <Compile Include="DTOs\System\RoleDTO.cs" />
     <Compile Include="DTOs\System\UserDTO.cs" />
     <Compile Include="Exceptions\ArgumentEmptyException.cs" />

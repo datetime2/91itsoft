@@ -50,6 +50,7 @@
     <Compile Include="Extensions\ExceptionExtensions.cs" />
     <Compile Include="Helper\Const.cs" />
     <Compile Include="Helper\Log.cs" />
+    <Compile Include="Helper\PredicateBuilderUtility.cs" />
     <Compile Include="Helper\TextHelper.cs" />
     <Compile Include="Helper\VerifyCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

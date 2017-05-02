@@ -16,6 +16,6 @@ namespace ITsoft.Application.Services
         bool ValidateLoginToken(Guid id, string token);
 
         UserDTO FindByLoginToken(Guid id, string token);
-        List<PermissionForAuthDTO> GetUserPermissions(Guid id);
+        List<MenuDTO> GetUserMenus(Guid id);
     }
 }

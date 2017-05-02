@@ -10,22 +10,22 @@ using ITsoft.Infrastructure.Utility.Helper;
 using PagedList;
 using ITsoft.Domain.IRepository;
 using ITsoft.Domain.Aggregates;
+using ITsoft.Domain.QueryModel;
 
 namespace ITsoft.Application.Services
 {
     public class RoleService : IRoleService
     {
         IRoleRepository _Repository;
-        IPermissionRepository _PermissionRepository;
-
+        IMenuRepository _menuRepository;
         #region Constructors
 
-        public RoleService(IRoleRepository repository,IPermissionRepository permissionRepository)                               
+        public RoleService(IRoleRepository repository, IMenuRepository menuRepository)
         {
             if (repository == null)
                 throw new ArgumentNullException("repository");
             _Repository = repository;
-            _PermissionRepository = permissionRepository;
+            _menuRepository = menuRepository;
         }
 
         #endregion
@@ -54,17 +54,10 @@ namespace ITsoft.Application.Services
             {
                 var current = roleDTO.ToModel();
                 current.Created = persisted.Created;    //不修改创建时间
-
                 if (current.Name.IsNullOrBlank())
-                {
                     throw new DataExistsException(UserSystemResource.Common_Name_Empty);
-                }
-
                 if (_Repository.Exists(current))
-                {
                     throw new DataExistsException(UserSystemResource.Role_Exists);
-                }
-
                 //Merge changes
                 _Repository.Merge(persisted, current);
 
@@ -84,7 +77,6 @@ namespace ITsoft.Application.Services
             if (role != null) //if exist
             {
                 _Repository.Remove(role);
-
                 //commit unit of work
                 _Repository.UnitOfWork.Commit();
             }
@@ -104,54 +96,47 @@ namespace ITsoft.Application.Services
             return _Repository.Get(id).ToDto();
         }
 
-        public IPagedList<RoleDTO> FindBy(string name, int pageNumber, int pageSize)
+        public IPagedList<RoleDTO> FindBy(RoleQueryModel query)
         {
-            var list = _Repository.FindBy(name, pageNumber, pageSize);
+            var list = _Repository.FindBy(query);
             return new StaticPagedList<RoleDTO>(
                list.ToList().Select(x => x.ToDto()),
-               pageNumber,
-               pageSize,
+               query.PageNumber.Value,
+               query.PageSize.Value,
                list.TotalItemCount);
         }
 
-        public void UpdateRolePermission(Guid id, List<Guid> permissions)
+        public void UpdateRoleMenu(Guid id, List<Guid> menus)
         {
             //get persisted item
             var persisted = _Repository.Get(id);
-
-            if (persisted != null) //if customer exist
+            if (menus != null) //if customer exist
             {
-                var pList = new List<Permission>();
-                foreach (var pid in permissions)
+                var mList = new List<Menu>();
+                foreach (var mid in menus)
                 {
-                    var p = _PermissionRepository.Get(pid);
+                    var p = _menuRepository.Get(mid);
                     if (p != null)
-                    {
-                        pList.Add(p);
-                    }
+                        mList.Add(p);
                 }
-
                 // 删除旧的权限
-                persisted.Permissions.Clear();
+                persisted.Menus.Clear();
                 // 添加新的权限
-                persisted.Permissions = pList;
-
+                persisted.Menus = mList;
                 //commit unit of work
                 _Repository.UnitOfWork.Commit();
             }
         }
 
-        public List<PermissionDTO> GetRolePermission(Guid id)
+        public List<MenuDTO> GetRoleMenu(Guid id)
         {
             //get persisted item
             var persisted = _Repository.Get(id);
-
             if (persisted != null) //if customer exist
             {
-                return persisted.Permissions.Select(x => x.ToDto()).ToList();
+                return persisted.Menus.Select(x => x.ToDto()).ToList();
             }
-
-            return new List<PermissionDTO>();
+            return new List<MenuDTO>();
         }
     }
 }

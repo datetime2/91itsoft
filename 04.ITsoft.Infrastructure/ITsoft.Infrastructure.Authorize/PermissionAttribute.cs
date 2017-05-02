@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ITsoft.Infrastructure.Authorize
 {
@@ -13,15 +9,6 @@ namespace ITsoft.Infrastructure.Authorize
         {
             Code = code;
         }
-
-        public PermissionAttribute(string code, int sortOrder)
-        {
-            Code = code;
-            SortOrder = sortOrder;
-        }
-
         public string Code { get; private set; }
-
-        public int SortOrder { get; private set; }
     }
 }

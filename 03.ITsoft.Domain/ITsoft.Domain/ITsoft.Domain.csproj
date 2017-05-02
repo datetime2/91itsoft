@@ -46,15 +46,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRepository\System\IMenuRepository.cs" />
-    <Compile Include="IRepository\System\IPermissionRepository.cs" />
     <Compile Include="Aggregates\System\MenuAgg\Menu.cs" />
-    <Compile Include="Aggregates\System\MenuAgg\Permission.cs" />
     <Compile Include="IRepository\System\IRoleRepository.cs" />
     <Compile Include="Aggregates\System\RoleAgg\Role.cs" />
     <Compile Include="IRepository\System\IUserRepository.cs" />
     <Compile Include="Aggregates\System\UserAgg\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryModel\BaseQueryModel.cs" />
+    <Compile Include="QueryModel\MenuQueryModel.cs" />
+    <Compile Include="QueryModel\RoleQueryModel.cs" />
+    <Compile Include="QueryModel\UserQueryModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\04.ITsoft.Infrastructure\ITsoft.Infrastructure\ITsoft.Infrastructure.csproj">

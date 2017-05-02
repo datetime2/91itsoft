@@ -10,7 +10,6 @@ namespace ITsoft.ModuleIOC
         {
             //Repository
             builder.RegisterType<MenuRepository>().As<IMenuRepository>().InstancePerRequest();
-            builder.RegisterType<PermissionRepository>().As<IPermissionRepository>().InstancePerRequest();
             builder.RegisterType<RoleRepository>().As<IRoleRepository>().InstancePerRequest();
             builder.RegisterType<UserRepository>().As<IUserRepository>().InstancePerRequest();
             //Services

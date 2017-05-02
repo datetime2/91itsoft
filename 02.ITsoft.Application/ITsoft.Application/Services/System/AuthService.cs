@@ -101,31 +101,26 @@ namespace ITsoft.Application.Services
             return user.ToDto();
         }
 
-        public List<PermissionForAuthDTO> GetUserPermissions(Guid id)
+        public List<MenuDTO> GetUserMenus(Guid id)
         {
             var user = _UserRepository.Get(id);
             if (user == null)
                 throw new ArgumentException(id.ToString(), "id");
-            var permissions = new List<PermissionForAuthDTO>();
-            foreach (var role in user.Roles.Where(role => role.Permissions != null))
+            var menus = new List<MenuDTO>();
+            foreach (var role in user.Roles.Where(role => role.Menus != null))
             {
-                permissions.AddRange(role.Permissions.Select(x => new PermissionForAuthDTO()
+                menus.AddRange(role.Menus.Select(x => new MenuDTO()
                 {
-                    PermissionId = x.Id,
-                    PermissionCode = x.Code,
-                    MenuId = x.Menu.Id,
-                    RoleId = role.Id,
-                    PermissionName = x.Name,
-                    MenuName = x.Menu.Name,
-                    MenuUrl = x.Menu.Url,
-                    RoleName = role.Name,
-                    PermissionSortOrder = x.SortOrder,
-                    MenuSortOrder = x.Menu.SortOrder,
-                    Module = (ModuleType)Enum.Parse(typeof(ModuleType), x.Menu.Module),
-                    ModuleName = ModulesManager.Instance.GetModulesName(x.Menu.Module)
+                    Id = x.Id,
+                    Code = x.Code,
+                    ParentId = x.ParentId,
+                    Name = x.Name,
+                    Url = x.Url,
+                    Icon = x.Icon,
+                    SortOrder = x.SortOrder
                 }));
             }
-            return permissions;
+            return menus;
         }
         /// <summary>
         /// 

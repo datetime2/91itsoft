@@ -13,7 +13,5 @@ namespace ITsoft.Application.DTOs
         public int SortOrder { get; set; }
 
         public DateTime Created { get; set; }
-
-        public Guid RoleGroupId { get; set; }
     }
 }

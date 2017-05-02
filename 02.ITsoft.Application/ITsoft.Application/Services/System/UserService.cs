@@ -10,23 +10,20 @@ using ITsoft.Entity;
 using ITsoft.Infrastructure.Utility.Helper;
 using PagedList;
 using ITsoft.Domain.IRepository;
+using ITsoft.Domain.QueryModel;
 
 namespace ITsoft.Application.Services
 {
     public class UserService : IUserService
     {
         IUserRepository _Repository;
-        IPermissionRepository _PermissionRepository;
-
         #region Constructors
 
-        public UserService(IUserRepository repository, IPermissionRepository permissionRepository)                               
+        public UserService(IUserRepository repository)                               
         {
             if (repository == null)
                 throw new ArgumentNullException("repository");
-
             _Repository = repository;
-            _PermissionRepository = permissionRepository;
         }
 
         #endregion
@@ -102,13 +99,13 @@ namespace ITsoft.Application.Services
         }
 
 
-        public IPagedList<UserDTO> FindBy(string name, int pageNumber, int pageSize)
+        public IPagedList<UserDTO> FindBy(UserQueryModel query)
         {
-            var list = _Repository.FindBy(name, pageNumber, pageSize);
+            var list = _Repository.FindBy(query);
             return new StaticPagedList<UserDTO>(
                list.ToList().Select(x => x.ToDto()),
-               pageNumber,
-               pageSize,
+               query.PageNumber.Value,
+               query.PageSize.Value,
                list.TotalItemCount);
         }
         public List<IdNameDTO> GetAllUsersIdName()

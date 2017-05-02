@@ -7,6 +7,7 @@ using ITsoft.Repository.UnitOfWork;
 using PagedList;
 using ITsoft.Infrastructure.Utility.Helper;
 using ITsoft.Domain.IRepository;
+using ITsoft.Domain.QueryModel;
 
 namespace ITsoft.Repository.Repositories
 {
@@ -15,43 +16,33 @@ namespace ITsoft.Repository.Repositories
         public MenuRepository(ITSoftUnitOfWork unitOfWork) : base(unitOfWork)
         {
         }
-        public IPagedList<Menu> FindBy(string module, string name, int pageNumber, int pageSize)
+        public IPagedList<Menu> FindBy(MenuQueryModel query)
         {
             IQueryable<Menu> entities = Table;
-
-            if (name.NotNullOrBlank())
+            if (query.Name.NotNullOrBlank())
             {
                 entities =
-                    entities.Where(x => x.Name.Contains(name));
+                    entities.Where(x => x.Name.Contains(query.Name));
             }
-
-            if (module.NotNullOrBlank())
-            {
-                entities =
-                        entities.Where(x => x.Module == module);
-            }
-
             var totalCountQuery = entities.FutureCount();
             var resultQuery = entities
-                .OrderBy(x => x.Module)
-                .ThenBy(x => x.SortOrder)
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize)
+                .OrderBy(x => x.SortOrder)
+                .Skip((query.PageNumber.Value - 1) * query.PageSize.Value)
+                .Take(query.PageSize.Value)
                 .Future();
             var totalCount = totalCountQuery.Value;
             var result = resultQuery.ToList();
-
             return new StaticPagedList<Menu>(
                 result,
-                pageNumber,
-                pageSize,
+                query.PageNumber.Value,
+                query.PageSize.Value,
                 totalCount);
         }
 
         public new bool Exists(Menu item)
         {
             IQueryable<Menu> entities = Table;
-            entities = entities.Where(x => x.Module == item.Module && x.Name == item.Name);
+            entities = entities.Where(x => x.Name == item.Name);
             if (item.Id != Guid.Empty)
             {
                 entities = entities.Where(x => x.Id != item.Id);

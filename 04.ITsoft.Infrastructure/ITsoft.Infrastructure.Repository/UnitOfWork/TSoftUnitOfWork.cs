@@ -15,14 +15,11 @@ namespace ITsoft.Repository.UnitOfWork
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<Permission> Permissions { get; set; }
         protected override void OnModelCreating(DbModelBuilder mb)
         {
             base.OnModelCreating(mb);
-            mb.Entity<Menu>().HasMany(x => x.Permissions).WithRequired(x => x.Menu);
-            mb.Entity<User>().HasMany(x => x.Roles).WithMany(x => x.Users).Map(x => x.MapLeftKey("User_Id").MapRightKey("Role_Id").ToTable("UserRole"));
-            mb.Entity<Role>().Property(s => s.Name).HasMaxLength(50);
-            mb.Entity<Role>().HasMany(x => x.Permissions).WithMany(x => x.Roles).Map(x => x.MapLeftKey("Role_Id").MapRightKey("Permission_Id").ToTable("RolePermission"));
+            mb.Entity<User>().HasMany(x => x.Roles).WithMany(x => x.Users).Map(x => x.MapLeftKey("UserId").MapRightKey("RoleId").ToTable("UserRole"));
+            mb.Entity<Role>().HasMany(x => x.Menus).WithMany(x => x.Roles).Map(x => x.MapLeftKey("RoleId").MapRightKey("MenuId").ToTable("RoleMenu"));
         }
 
         public void ApplyCurrentValues<TEntity>(TEntity original, TEntity current) where TEntity : class

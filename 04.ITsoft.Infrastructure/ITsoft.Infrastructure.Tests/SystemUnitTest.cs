@@ -69,123 +69,130 @@ namespace ITsoft.Infrastructure.Tests
         [TestMethod]
         public void AddMenu()
         {
-            using (var unitOfWork = new TSoftUnitOfWork())
+            try
             {
+                using (var unitOfWork = new TSoftUnitOfWork())
+                {
 
-                var baseList = new List<Menu> {
+                    var baseList = new List<Menu> {
                     new Menu
                     {
                         Id = IdentityGenerator.NewSequentialGuid(),
                         Name="产品管理",
-                         Created=DateTime.Now
+                         Created=DateTime.Now,Code="0001"
                     },
                      new Menu
                     {
                         Id = IdentityGenerator.NewSequentialGuid(),
                         Name="订单管理",
-                         Created=DateTime.Now
+                         Created=DateTime.Now,Code="0002"
                     },
                       new Menu
                     {
                         Id = IdentityGenerator.NewSequentialGuid(),
                         Name="会员管理",
-                         Created=DateTime.Now
+                         Created=DateTime.Now,Code="0003"
                     },
                        new Menu
                     {
                         Id = IdentityGenerator.NewSequentialGuid(),
                         Name="系统管理",
-                         Created=DateTime.Now
+                         Created=DateTime.Now,Code="0004"
                     }
                 };
-                var childList = new List<Menu>();
-                baseList.ForEach(s =>
-                {
-                    switch (s.Name)
+                    var childList = new List<Menu>();
+                    baseList.ForEach(s=>
                     {
-                        case "产品管理":
-                            childList.AddRange(new List<Menu> {
+                        switch (s.Name)
+                        {
+                            case "产品管理":
+                                childList.AddRange(new List<Menu> {
                                   new Menu
                                     {
                                         Id = IdentityGenerator.NewSequentialGuid(),
                                         ParentId=s.Id,
                                         Name="产品列表",
-                                         Created=DateTime.Now
+                                         Created=DateTime.Now,Code=s.Code+"01"
                                     },
                                        new Menu
                                     {
                                         Id = IdentityGenerator.NewSequentialGuid(),
                                         Name="产品分类",
                                         ParentId=s.Id,
-                                         Created=DateTime.Now
+                                         Created=DateTime.Now,Code=s.Code+"02"
                                     }
-                            });
-                            break;
-                        case "订单管理":
-                            childList.AddRange(new List<Menu> {
+                                });
+                                break;
+                            case "订单管理":
+                                childList.AddRange(new List<Menu> {
                                   new Menu
                                     {
                                         Id = IdentityGenerator.NewSequentialGuid(),
                                         ParentId=s.Id,
                                         Name="订单列表",
-                                         Created=DateTime.Now
+                                         Created=DateTime.Now,Code=s.Code+"01"
                                     },
                                        new Menu
                                     {
                                         Id = IdentityGenerator.NewSequentialGuid(),
                                         Name="支付方式",
                                         ParentId=s.Id,
-                                         Created=DateTime.Now
+                                         Created=DateTime.Now,Code=s.Code+"02"
                                     }
-                            });
-                            break;
-                        case "会员管理":
-                            childList.AddRange(new List<Menu> {
+                                });
+                                break;
+                            case "会员管理":
+                                childList.AddRange(new List<Menu> {
                                   new Menu
                                     {
                                         Id = IdentityGenerator.NewSequentialGuid(),
                                         ParentId=s.Id,
                                         Name="会员列表",
-                                         Created=DateTime.Now
+                                         Created=DateTime.Now,Code=s.Code+"01"
                                     },
                                        new Menu
                                     {
                                         Id = IdentityGenerator.NewSequentialGuid(),
                                         Name="会员等级",
                                         ParentId=s.Id,
-                                         Created=DateTime.Now
+                                         Created=DateTime.Now,Code=s.Code+"02"
                                     }
-                            });
-                            break;
-                        case "系统管理":
-                            childList.AddRange(new List<Menu> {
+                                });
+                                break;
+                            case "系统管理":
+                                childList.AddRange(new List<Menu> {
                                   new Menu
                                     {
                                         Id = IdentityGenerator.NewSequentialGuid(),
                                         ParentId=s.Id,
                                         Name="系统配置",
-                                         Created=DateTime.Now
+                                         Created=DateTime.Now,Code=s.Code+"01"
                                     },
                                        new Menu
                                     {
                                         Id = IdentityGenerator.NewSequentialGuid(),
                                         Name="系统角色",
                                         ParentId=s.Id,
-                                         Created=DateTime.Now
+                                         Created=DateTime.Now,Code=s.Code+"02"
                                     },
                                         new Menu
                                     {
                                         Id = IdentityGenerator.NewSequentialGuid(),
                                         Name="系统菜单",
                                         ParentId=s.Id,
-                                         Created=DateTime.Now
+                                         Created=DateTime.Now,Code=s.Code+"03"
                                     }
-                            });
-                            break;
-                    }
-                });
-                unitOfWork.Menus.AddRange(baseList.Concat(childList));
-                unitOfWork.DbContext.SaveChanges();
+                                });
+                                break;
+                        }
+                    });
+                    unitOfWork.Menus.AddRange(baseList.Concat(childList));
+                    unitOfWork.DbContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }

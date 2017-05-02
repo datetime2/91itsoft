@@ -14,13 +14,5 @@ namespace ITsoft.Application.AutoMappers
         {
             return Mapper.Map<MenuDTO>(model);
         }
-        public static Permission ToModel(this PermissionDTO dto)
-        {
-            return Mapper.Map<Permission>(dto);
-        }
-        public static PermissionDTO ToDto(this Permission model)
-        {
-            return Mapper.Map<PermissionDTO>(model);
-        }
     }
 }
