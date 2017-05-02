@@ -25,7 +25,14 @@ namespace ITsoft.PlatSystem.Areas.System.Controllers
         public JsonResult InitGrid(RoleQueryModel query)
         {
             var grid = _roleService.FindBy(query);
-            return Json(grid, JsonRequestBehavior.AllowGet);
+            return Json(new
+            {
+                rows=grid[0],
+                page=query.page,
+                size=query.rows,
+                records=grid.GetMetaData().TotalItemCount,
+                total= grid.GetMetaData().PageCount
+            }, JsonRequestBehavior.AllowGet);
         }
     }
 }

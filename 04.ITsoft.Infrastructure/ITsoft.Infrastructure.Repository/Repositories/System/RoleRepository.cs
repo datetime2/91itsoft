@@ -34,7 +34,6 @@ namespace ITsoft.Repository.Repositories
 
             var totalCount = totalCountQuery.Value;
             var result = resultQuery.ToList();
-
             return new StaticPagedList<Role>(
                 result,
                 query.page.Value,
