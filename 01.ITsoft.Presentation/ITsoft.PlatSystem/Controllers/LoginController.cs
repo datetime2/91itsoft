@@ -28,6 +28,7 @@ namespace ITsoft.PlatSystem.Controllers
             {
                 AuthorizeManager.SignIn(LoginName, PassWord, rememberMe.Value);
                 response.Succeeded = true;
+                response.RedirectUrl = "";
             }
             catch (Exception ex)
             {

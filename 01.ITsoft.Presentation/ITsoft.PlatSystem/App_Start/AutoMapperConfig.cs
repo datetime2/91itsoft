@@ -14,6 +14,8 @@ namespace ITsoft.PlatSystem
                 cfg.CreateMap<UserDTO, User>();
                 cfg.CreateMap<Role, RoleDTO>();
                 cfg.CreateMap<RoleDTO, Role>();
+                cfg.CreateMap<Menu, MenuDTO>();
+                cfg.CreateMap<MenuDTO, Menu>();
             });
         }
     }

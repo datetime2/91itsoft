@@ -89,15 +89,25 @@ namespace ITsoft.Application.Managers
             //按钮
 
             //菜单
-            authUser.Menus = menus.Select(x => new MenuForAuthorize()
+            authUser.Menus = menus.Where(s => s.ParentId.Equals(Guid.Empty)).Select(x => new MenuForAuthorize()
             {
                 MenuId = x.Id,
                 ParentId = x.ParentId,
                 MenuName = x.Name,
                 MenuUrl = x.Url,
                 MenuIcon = x.Icon,
-                MenuCode=x.Code,
-                SortOrder = x.SortOrder
+                MenuCode = x.Code,
+                SortOrder = x.SortOrder,
+                Childs = menus.Where(ss => ss.ParentId.Equals(x.Id)).Select(xx => new MenuForAuthorize
+                {
+                    MenuId = xx.Id,
+                    ParentId = xx.ParentId,
+                    MenuName = xx.Name,
+                    MenuUrl = xx.Url,
+                    MenuIcon = xx.Icon,
+                    MenuCode = xx.Code,
+                    SortOrder = xx.SortOrder
+                }).ToList()
             }).OrderBy(x => x.SortOrder).ToList();
             return authUser;
         }

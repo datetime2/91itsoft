@@ -161,16 +161,16 @@ function GetLoadNav() {
             if (data) {
                 $.each(data, function (i) {
                     var row = data[i];
-                    if (row.F_ParentId == "0") {
+                    if (row.ParentId == "00000000-0000-0000-0000-000000000000") {
                         _html += '<li>';
-                        _html += '<a data-id="' + row.F_Id + '" href="#" class="dropdown-toggle"><i class="' + row.F_Icon + '"></i><span>' + row.F_FullName + '</span><i class="fa fa-angle-right drop-icon"></i></a>';
-                        var childNodes = row.ChildNodes;
+                        _html += '<a data-id="' + row.MenuId + '" href="#" class="dropdown-toggle"><i class="' + row.MenuIcon + '"></i><span>' + row.MenuName + '</span><i class="fa fa-angle-right drop-icon"></i></a>';
+                        var childNodes = row.Childs;
                         if (childNodes.length > 0) {
                             _html += '<ul class="submenu">';
                             $.each(childNodes, function (i) {
                                 var subrow = childNodes[i];
                                 _html += '<li>';
-                                _html += '<a class="menuItem" data-id="' + subrow.F_Id + '" href="' + subrow.F_UrlAddress + '" data-index="' + subrow.F_SortCode + '">' + subrow.F_FullName + '</a>';
+                                _html += '<a class="menuItem" data-id="' + subrow.MenuId + '" href="' + subrow.MenuUrl + '" data-index="' + subrow.Code + '">' + subrow.MenuName + '</a>';
                                 _html += '</li>';
                             });
                             _html += '</ul>';

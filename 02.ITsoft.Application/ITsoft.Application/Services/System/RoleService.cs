@@ -127,7 +127,6 @@ namespace ITsoft.Application.Services
                 _Repository.UnitOfWork.Commit();
             }
         }
-
         public List<MenuDTO> GetRoleMenu(Guid id)
         {
             //get persisted item

@@ -195,5 +195,49 @@ namespace ITsoft.Infrastructure.Tests
 
             }
         }
+
+        [TestMethod]
+        public void AddRole()
+        {
+            var sw = new Stopwatch();
+            TimeSpan timeCost;
+
+            using (var unitOfWork = new TSoftUnitOfWork())
+            {
+                sw.Start();
+
+                #region AddOrUpdate
+
+                const string roleName = "超级管理员";
+
+                var role = unitOfWork.Roles.FirstOrDefault(x => x.Name.Equals(roleName));
+                string salt = Guid.NewGuid().ToString();
+                if (role == null)
+                {
+                    role = new Role()
+                    {
+                        Id = IdentityGenerator.NewSequentialGuid(),
+                        Name = roleName,
+                        Created = DateTime.UtcNow,
+                        IsEnable=true
+                    };
+                    unitOfWork.Roles.Add(role);
+                }
+                else
+                {
+                    role.Name = "超级管理员";
+                    role.Created = DateTime.UtcNow;
+                }
+
+                #endregion
+
+                unitOfWork.DbContext.SaveChanges();
+
+                sw.Stop();
+                timeCost = sw.Elapsed;
+            }
+
+            Console.WriteLine("Elapsed: " + timeCost.Ticks);
+        }
     }
 }

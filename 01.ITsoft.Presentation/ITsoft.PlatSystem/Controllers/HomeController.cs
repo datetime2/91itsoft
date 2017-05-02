@@ -5,11 +5,6 @@ namespace ITsoft.PlatSystem.Controllers
 {
     public class HomeController : BaseAuthorizeController
     {
-        IMenuService _menuService;
-        public HomeController(IMenuService menuService)
-        {
-            this._menuService = menuService;
-        }
         public ActionResult Main()
         {
             return View();
@@ -17,8 +12,7 @@ namespace ITsoft.PlatSystem.Controllers
         [HttpGet]
         public JsonResult Permission()
         {
-            var menus = _menuService.FindBy(s => true);
-            return Json(menus, JsonRequestBehavior.AllowGet);
+            return Json(GetCurrentUser().Menus, JsonRequestBehavior.AllowGet);
         }
     }
 }
