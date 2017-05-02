@@ -32,7 +32,7 @@ namespace ITsoft.Entity
                 OnIdChanged();
             }
         }
-
+        //public bool? IsEnable { get; set; }
         #endregion
 
         #region Abstract Methods

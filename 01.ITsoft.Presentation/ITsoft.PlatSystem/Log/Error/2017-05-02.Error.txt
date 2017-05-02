@@ -1,0 +1,105 @@
+时间：2017-05-02 10:18:18,476 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 执行命令定义时出错。有关详细信息，请参阅内部异常。
+Type: System.Data.Entity.Core.EntityCommandExecutionException
+StackTrace:    在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 ITsoft.Repository.SpecificRepositoryBase`1.Find(Func`2 acquire) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\04.ITsoft.Infrastructure\ITsoft.Infrastructure.Repository\SpecificRepositoryBase.cs:行号 91
+   在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 49
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 153
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 29
+InnerException: Message: 列名 'IsEnable' 无效。
+	Type: System.Data.SqlClient.SqlException
+	StackTrace:    在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+	   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+	   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+	   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+	   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+	   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+	   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+	   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+	   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+	   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+	   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+	   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+	   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+	InnerException:  
+
+时间：2017-05-02 10:18:36,758 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 执行命令定义时出错。有关详细信息，请参阅内部异常。
+Type: System.Data.Entity.Core.EntityCommandExecutionException
+StackTrace:    在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 ITsoft.Repository.SpecificRepositoryBase`1.Find(Func`2 acquire) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\04.ITsoft.Infrastructure\ITsoft.Infrastructure.Repository\SpecificRepositoryBase.cs:行号 91
+   在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 49
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 153
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 29
+InnerException: Message: 列名 'IsEnable' 无效。
+	Type: System.Data.SqlClient.SqlException
+	StackTrace:    在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+	   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+	   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+	   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+	   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+	   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+	   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+	   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+	   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+	   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+	   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+	   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+	   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+	InnerException:  
+
+时间：2017-05-02 10:19:28,999 
+级别：ERROR 
+类名：ITsoft.PlatSystem.Controllers.LoginController.SignIn  
+描述：Message: 执行命令定义时出错。有关详细信息，请参阅内部异常。
+Type: System.Data.Entity.Core.EntityCommandExecutionException
+StackTrace:    在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source, Func`2 predicate)
+   在 ITsoft.Repository.SpecificRepositoryBase`1.Find(Func`2 acquire) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\04.ITsoft.Infrastructure\ITsoft.Infrastructure.Repository\SpecificRepositoryBase.cs:行号 91
+   在 ITsoft.Application.Services.AuthService.Login(String loginName, String password, Boolean updateLoginToken) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\Services\System\AuthService.cs:行号 49
+   在 ITsoft.Application.Managers.AuthorizeManager.SignIn(String loginName, String password, Boolean rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\02.ITsoft.Application\ITsoft.Application\AuthorizeManager.cs:行号 153
+   在 ITsoft.PlatSystem.Controllers.LoginController.SignIn(String ReturnUrl, String LoginName, String PassWord, String Code, Nullable`1 rememberMe) 位置 D:\CodeFile\91itsoft.com\91itsoft.com\01.ITsoft.Presentation\ITsoft.PlatSystem\Controllers\LoginController.cs:行号 29
+InnerException: Message: 列名 'IsEnable' 无效。
+	Type: System.Data.SqlClient.SqlException
+	StackTrace:    在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+	   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+	   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+	   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+	   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+	   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+	   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+	   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+	   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+	   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+	   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+	   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+	   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+	InnerException:  
+
