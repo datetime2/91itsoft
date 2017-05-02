@@ -95,8 +95,8 @@ namespace ITsoft.Application.Services
             var result = list.OrderBy(x => x.SortOrder).ToList();
             return new StaticPagedList<MenuDTO>(
                 result.Select(x => x.ToDto()),
-                query.PageNumber.Value,
-                query.PageSize.Value,
+                query.page.Value,
+                query.rows.Value,
                 list.TotalItemCount);
         }
 

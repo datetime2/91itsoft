@@ -28,8 +28,8 @@ namespace ITsoft.Repository.Repositories
             var totalCountQuery = entities.FutureCount();
             var resultQuery = entities
                 .OrderBy(x => x.SortOrder)
-                .Skip((query.PageNumber.Value - 1) * query.PageSize.Value)
-                .Take(query.PageSize.Value)
+                .Skip((query.page.Value - 1) * query.rows.Value)
+                .Take(query.rows.Value)
                 .Future();
 
             var totalCount = totalCountQuery.Value;
@@ -37,8 +37,8 @@ namespace ITsoft.Repository.Repositories
 
             return new StaticPagedList<Role>(
                 result,
-                query.PageNumber.Value,
-                query.PageSize.Value,
+                query.page.Value,
+                query.rows.Value,
                 totalCount);
         }
 

@@ -101,8 +101,8 @@ namespace ITsoft.Application.Services
             var list = _Repository.FindBy(query);
             return new StaticPagedList<RoleDTO>(
                list.ToList().Select(x => x.ToDto()),
-               query.PageNumber.Value,
-               query.PageSize.Value,
+               query.page.Value,
+               query.rows.Value,
                list.TotalItemCount);
         }
 

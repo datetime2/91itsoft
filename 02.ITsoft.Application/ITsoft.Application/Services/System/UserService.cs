@@ -104,8 +104,8 @@ namespace ITsoft.Application.Services
             var list = _Repository.FindBy(query);
             return new StaticPagedList<UserDTO>(
                list.ToList().Select(x => x.ToDto()),
-               query.PageNumber.Value,
-               query.PageSize.Value,
+               query.page.Value,
+               query.rows.Value,
                list.TotalItemCount);
         }
         public List<IdNameDTO> GetAllUsersIdName()
