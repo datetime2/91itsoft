@@ -48,12 +48,12 @@
     }
     function submitForm() {
         var postData = $("#form1").formSerialize();
-        postData["permissionIds"] = String($("#permissionTree").getCheckedNodes());
+        postData["menuIds"] = String($("#permissionMenuTree").getCheckedNodes());
         $.submitForm({
             url: "/System/Role/submitForm?keyValue=" + keyValue,
             param: postData,
             success: function () {
-                $.currentWindow().$("#gridList").trigger("reloadGrid");
+                $.currentWindow().$("#grid").trigger("reloadGrid");
             }
         });
     }

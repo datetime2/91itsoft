@@ -15,7 +15,7 @@ namespace ITsoft.Application.Services
         List<RoleDTO> FindAll();
         RoleDTO FindBy(Guid id);
         IPagedList<RoleDTO> FindBy(RoleQueryModel query);
-        void UpdateRoleMenu(Guid id, List<Guid> menus);
+        void UpdateRoleMenu(RoleDTO roleDTO, IEnumerable<Guid> menus);
         List<MenuDTO> GetRoleMenu(Guid id);
         List<TreeViewModel> RoleModuleTree(Guid roleId);
     }

@@ -1,4 +1,5 @@
-﻿using ITsoft.Application.Services;
+﻿using ITsoft.Application.DTOs;
+using ITsoft.Application.Services;
 using ITsoft.Domain.Aggregates;
 using ITsoft.Domain.QueryModel;
 using ITsoft.PlatSystem.Controllers;
@@ -48,16 +49,16 @@ namespace ITsoft.PlatSystem.Areas.System.Controllers
             return Json(data, JsonRequestBehavior.AllowGet);
         }
         [HttpPost]
-        public ActionResult submitForm(Role roleEntity, string menus, string keyValue)
+        public ActionResult submitForm(RoleDTO roleEntity, string menuIds,Guid? keyValue)
         {
-            //_roleServiceApp.UpdateRoleMenu()
-            //roleApp.SubmitForm(roleEntity, permissionIds.Split(','), keyValue);
+            roleEntity.Id = keyValue.HasValue ? keyValue.Value : Guid.Empty;
+            _roleServiceApp.UpdateRoleMenu(roleEntity, menuIds.Split(',').Select(s => Guid.Parse(s)));
             return Success("操作成功");
         }
         [HttpGet]
-        public JsonResult roleAuthorize(Guid roleId)
+        public JsonResult roleAuthorize(Guid? roleId)
         {
-            var grid = _roleServiceApp.RoleModuleTree(roleId);
+            var grid = _roleServiceApp.RoleModuleTree(roleId.HasValue ? roleId.Value : Guid.Empty);
             return Json(grid, JsonRequestBehavior.AllowGet);
         }
     }

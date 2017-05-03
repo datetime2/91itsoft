@@ -181,23 +181,20 @@ $.submitForm = function (options) {
     var options = $.extend(defaults, options);
     $.loading(true, options.loading);
     window.setTimeout(function () {
-        if ($('[name=__RequestVerificationToken]').length > 0) {
-            options.param["__RequestVerificationToken"] = $('[name=__RequestVerificationToken]').val();
-        }
         $.ajax({
             url: options.url,
             data: options.param,
             type: "post",
             dataType: "json",
             success: function (data) {
-                if (data.state == "success") {
+                if (data.State == "success") {
                     options.success(data);
-                    $.modalMsg(data.message, data.state);
+                    $.modalMsg(data.message, data.State);
                     if (options.close == true) {
                         $.modalClose();
                     }
                 } else {
-                    $.modalAlert(data.message, data.state);
+                    $.modalAlert(data.message, data.State);
                 }
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -223,9 +220,6 @@ $.deleteForm = function (options) {
         close: true
     };
     var options = $.extend(defaults, options);
-    if ($('[name=__RequestVerificationToken]').length > 0) {
-        options.param["__RequestVerificationToken"] = $('[name=__RequestVerificationToken]').val();
-    }
     $.modalConfirm(options.prompt, function (r) {
         if (r) {
             $.loading(true, options.loading);
@@ -236,11 +230,11 @@ $.deleteForm = function (options) {
                     type: "post",
                     dataType: "json",
                     success: function (data) {
-                        if (data.state == "success") {
+                        if (data.State == "success") {
                             options.success(data);
-                            $.modalMsg(data.message, data.state);
+                            $.modalMsg(data.message, data.State);
                         } else {
-                            $.modalAlert(data.message, data.state);
+                            $.modalAlert(data.message, data.State);
                         }
                     },
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
@@ -347,9 +341,6 @@ $.fn.formSerialize = function (formdate) {
                 break;
         }
     });
-    if ($('[name=__RequestVerificationToken]').length > 0) {
-        postdata["__RequestVerificationToken"] = $('[name=__RequestVerificationToken]').val();
-    }
     return postdata;
 };
 $.fn.bindSelect = function (options) {
