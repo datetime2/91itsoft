@@ -12,6 +12,8 @@ namespace ITsoft.Application.DTOs
 
         public int SortOrder { get; set; }
 
+        public bool? IsEnable { get; set; }
+
         public DateTime Created { get; set; }
     }
 }

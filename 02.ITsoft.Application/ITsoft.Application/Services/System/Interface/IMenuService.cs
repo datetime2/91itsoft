@@ -5,6 +5,7 @@ using PagedList;
 using ITsoft.Domain.QueryModel;
 using System.Linq.Expressions;
 using ITsoft.Domain.Aggregates;
+using ITsoft.Domain.ViewModel;
 
 namespace ITsoft.Application.Services
 {

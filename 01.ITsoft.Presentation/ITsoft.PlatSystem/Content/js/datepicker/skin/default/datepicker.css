@@ -214,7 +214,7 @@
 	margin-left: 2px;
 	line-height: 16px;
 	width: 45px;
-	background-color: #1ABC9C;
+	background-color: #3c8dbc;
 	color: #fff;
 	border: none;
 	cursor: pointer;
@@ -242,7 +242,7 @@
 }
 
 .WdateDiv #dpTime .menuOn {
-	background: #1ABC9C;
+	background: #3c8dbc;
 }
 
 .WdateDiv #dpTime td {
@@ -269,7 +269,7 @@
 }
 
 .WdateDiv .WdayOn,.WdateDiv .WwdayOn,.WdateDiv .Wselday,.WdateDiv .WotherDayOn {
-	background-color: #1ABC9C;
+	background-color: #3c8dbc;
 	color: #fff;
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ITsoft.Application.DTOs;
 using PagedList;
 using ITsoft.Domain.QueryModel;
+using ITsoft.Domain.ViewModel;
 
 namespace ITsoft.Application.Services
 {
@@ -16,5 +17,6 @@ namespace ITsoft.Application.Services
         IPagedList<RoleDTO> FindBy(RoleQueryModel query);
         void UpdateRoleMenu(Guid id, List<Guid> menus);
         List<MenuDTO> GetRoleMenu(Guid id);
+        List<TreeViewModel> RoleModuleTree(Guid roleId);
     }
 }

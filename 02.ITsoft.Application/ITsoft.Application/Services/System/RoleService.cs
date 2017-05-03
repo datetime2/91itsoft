@@ -11,6 +11,7 @@ using PagedList;
 using ITsoft.Domain.IRepository;
 using ITsoft.Domain.Aggregates;
 using ITsoft.Domain.QueryModel;
+using ITsoft.Domain.ViewModel;
 
 namespace ITsoft.Application.Services
 {
@@ -136,6 +137,35 @@ namespace ITsoft.Application.Services
                 return persisted.Menus.Select(x => x.ToDto()).ToList();
             }
             return new List<MenuDTO>();
+        }
+
+        public List<TreeViewModel> RoleModuleTree(Guid roleId)
+        {
+            var tree = new List<TreeViewModel>();
+            if (roleId != Guid.Empty)
+            {
+                var systemMenu = _menuRepository.FindAll();
+                var userMenu = _Repository.RoleMenu(roleId);
+                tree = systemMenu.Where(s => s.ParentId == Guid.Empty).Select(s => new TreeViewModel
+                {
+                    id = s.Id.ToString(),
+                    value = s.Id.ToString(),
+                    text = s.Name,
+                    checkstate = userMenu.Any(ss => ss.Id.Equals(s.Id)) ? 1 : 0,
+                    hasChildren = true,
+                    img = s.Icon,
+                    ChildNodes = systemMenu.Where(p => p.ParentId == s.Id).Select(nodes => new TreeViewModel
+                    {
+                        id = nodes.Id.ToString(),
+                        text = nodes.Name,
+                        checkstate = userMenu.Any(ss => ss.Id.Equals(nodes.Id)) ? 1 : 0,
+                        hasChildren = false,
+                        img = nodes.Icon,
+                        value = nodes.Id.ToString()
+                    }).ToList()
+                }).ToList();
+            }
+            return tree;
         }
     }
 }

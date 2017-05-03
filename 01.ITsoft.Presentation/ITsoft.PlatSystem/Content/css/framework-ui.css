@@ -72,9 +72,9 @@
 .wrapper .nav-tabs{position:relative;z-index:1;margin:0;padding:15px 15px 0;border-color:#ddd}
 .wrapper .nav-tabs>li{margin:0 4px 0 0;}
 .wrapper .nav-tabs>li>a{line-height:30px;padding:0 13px;background-color:#fff;border:none;cursor:pointer;color: #666;}
-.wrapper .nav-tabs>li>a:hover{border:none;border-bottom:2px solid #1ABC9C;background-color:#fff;color:#333}
-.wrapper .nav-tabs>li.active a{line-height:30px;background-color:#fff;border:none;border-bottom:2px solid #1ABC9C;color: #666;}
-.wrapper .nav-tabs>li.active a:hover,.aw-nav-tabs>li.active a:focus,.aw-nav-tabs>li>a:focus{border:none;border-bottom:2px solid #1ABC9C;background-color:#fff}
+.wrapper .nav-tabs>li>a:hover{border:none;border-bottom:2px solid #3c8dbc;background-color:#fff;color:#333}
+.wrapper .nav-tabs>li.active a{line-height:30px;background-color:#fff;border:none;border-bottom:2px solid #3c8dbc;color: #666;}
+.wrapper .nav-tabs>li.active a:hover,.aw-nav-tabs>li.active a:focus,.aw-nav-tabs>li>a:focus{border:none;border-bottom:2px solid #3c8dbc;background-color:#fff}
 .wrapper .pop-list{width: 100%;margin: 0;float: left;height: auto;list-style: none;padding:0px;}
 .wrapper .pop-list li{position: relative;float: left;clear: left;width: 100%;height: auto;margin-bottom: 10px;line-height: 20px;list-style: none;}
 .wrapper .pop-list li span{float: left;max-width: 200px;margin-right: 10px;}

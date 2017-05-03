@@ -8,6 +8,7 @@ using PagedList;
 using ITsoft.Domain.Aggregates;
 using ITsoft.Domain.IRepository;
 using ITsoft.Domain.QueryModel;
+using System.Collections.Generic;
 
 namespace ITsoft.Repository.Repositories
 {
@@ -48,6 +49,12 @@ namespace ITsoft.Repository.Repositories
             if (item.Id != Guid.Empty)
                 entities = entities.Where(x => x.Id != item.Id);
             return entities.Any();
+        }
+
+        public IEnumerable<Menu> RoleMenu(Guid roleId)
+        {
+            IQueryable<Role> entities = Table;
+            return entities.FirstOrDefault(s => s.Id == roleId).Menus;
         }
     }
 }
