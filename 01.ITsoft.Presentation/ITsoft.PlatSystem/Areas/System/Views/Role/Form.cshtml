@@ -48,7 +48,12 @@
     }
     function submitForm() {
         var postData = $("#form1").formSerialize();
-        postData["menuIds"] = String($("#permissionMenuTree").getCheckedNodes());
+        var menus = String($("#permissionMenuTree").getCheckedNodes());
+        if (!menus) {
+            $.modalMsg("菜单权限未选择", "warning");
+            return;
+        }
+        postData["menuIds"] = menus;
         $.submitForm({
             url: "/System/Role/submitForm?keyValue=" + keyValue,
             param: postData,
