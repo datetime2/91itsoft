@@ -432,7 +432,6 @@
     <Content Include="Content\js\simditor\css\fonticon.scss" />
     <Content Include="Content\js\simditor\css\simditor.scss" />
     <Content Include="Areas\System\Views\web.config" />
-    <Content Include="Areas\System\Views\Role\Details.cshtml" />
     <Content Include="Areas\System\Views\Role\Form.cshtml" />
     <Content Include="Areas\System\Views\Role\Index.cshtml" />
     <Content Include="Views\Shared\_Form.cshtml" />
